@@ -6,6 +6,38 @@
   gap: 80px;
   margin: 80px 150px;
 
+  .contact-alert {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    padding: 14px 22px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    z-index: 999;
+    animation: slideIn 0.4s ease;
+
+    &.success {
+      background: linear-gradient(270deg, #22c55e, #16a34a);
+    }
+
+    &.error {
+      background: linear-gradient(270deg, #ef4444, #b91c1c);
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(120%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
   .contact-title {
     position: relative;
 
@@ -115,6 +147,12 @@
         color: #a0a0a0;
         font-family: Outfit;
         font-size: 18px;
+      }
+
+      input:focus,
+      textarea:focus {
+        outline: none;
+        border: 2px solid #df8908;
       }
 
       .contact-submit {

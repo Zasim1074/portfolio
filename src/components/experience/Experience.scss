@@ -1,0 +1,128 @@
+//  VARIABLES
+$primary-orange: #df8908;
+$primary-purple: #b415ff;
+$text-light: #e5e7eb;
+$text-muted: #9ca3af;
+$text-white: #ffffff;
+
+//  EXPERIENCE SECTION
+.experience {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  margin: 80px 190px;
+
+  //  TITLE
+  &-title {
+    position: relative;
+
+    h1 {
+      padding: 0 30px;
+      font-size: 80px;
+      font-weight: 600;
+    }
+
+    img {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+  }
+
+  //  ROLE CARD
+  .role {
+    width: 100%;
+    max-width: 100%;
+    min-width: 80%;
+    padding: 28px 32px;
+    border-radius: 16px;
+    border: none;
+    color: $text-light;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 0 0 1px $primary-orange, 0 0 10px $primary-purple;
+  }
+
+  //  COMPANY HEADER
+  .role-company {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      padding: 10px;
+      background: white;
+      border-radius: 8px;
+    }
+  }
+
+  .company-detail {
+    h1 {
+      font-size: 22px;
+      font-weight: 600;
+      margin: 0;
+      color: $text-white;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 500;
+      margin: 6px 0 4px;
+    }
+
+    p {
+      font-size: 16px;
+      margin: 0;
+      color: $text-muted;
+    }
+  }
+
+  //  DESCRIPTION
+  .role-description {
+    margin-top: 22px;
+
+    hr {
+      height: 10px;
+      margin-bottom: 18px;
+      border: none;
+      border-radius: 10px;
+
+      background: linear-gradient(
+        270deg,
+        $primary-orange 80%,
+        $primary-purple 100%
+      );
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 14px;
+
+      font-size: 18px;
+      line-height: 1.2;
+      color: #d1d5db;
+
+      &::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 22px;
+        line-height: 1;
+        color: $primary-purple;
+      }
+    }
+  }
+}
