@@ -64,3 +64,50 @@
     padding: 20px 30px;
   }
 }
+
+@media (max-width: 768px) {
+  .mywork {
+    gap: 40px;
+    margin: 50px 30px;
+    align-items: start;
+
+    .mywork-title {
+      h1 {
+        font-size: 50px;
+        padding-left: 20px;
+        font-weight: 600;
+      }
+
+      img {
+        width: 130px;
+        margin-right: -20px;
+      }
+    }
+
+    .mywork-container {
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .mywork-showmore {
+      padding: 10px 30px;
+      font-size: 18px;
+      margin: 50px auto;
+      cursor: pointer;
+      gap: 10px;
+      margin: 10px auto;
+    }
+
+    .mywork-showmore:hover {
+      gap: 20px;
+      border: 1.5 solid #ff00ff;
+      padding: 15px 35px;
+      font-size: 19px;
+    }
+  }
+}

@@ -103,13 +103,13 @@ $text-white: #ffffff;
       margin: 0;
       padding: 0;
       list-style: none;
+      text-align: justify;
     }
 
     li {
       position: relative;
       padding-left: 22px;
       margin-bottom: 14px;
-
       font-size: 18px;
       line-height: 1.2;
       color: #d1d5db;
@@ -122,6 +122,45 @@ $text-white: #ffffff;
         font-size: 22px;
         line-height: 1;
         color: $primary-purple;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .experience {
+    gap: 40px;
+    margin: 50px 70px;
+    align-items: start;
+
+    .experience-title {
+      h1 {
+        font-size: 50px;
+        padding: 0;
+        font-weight: 600;
+      }
+
+      img {
+        width: 130px;
+        margin-right: -20px;
+      }
+    }
+
+    .role {
+      padding: 20px;
+      .role-description {
+        hr {
+          height: 6px;
+        }
+
+        ul {
+          text-align: justify;
+          li {
+            padding-left: 16px;
+            font-size: 17px;
+            font-weight: 300;
+          }
+        }
       }
     }
   }

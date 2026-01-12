@@ -3,7 +3,9 @@ import React from "react";
 const Footer = () => {
   return (
     <div style={divStyle}>
-      <p>© 2026 Jaseem Quraishi. All rights reserved.</p>
+      <p style={{ fontSize: "16px" }}>
+        © 2026 Jaseem Quraishi. All rights reserved.
+      </p>
     </div>
   );
 };

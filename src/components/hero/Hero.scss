@@ -67,3 +67,30 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .hero {
+    img {
+      width: 260px;
+      margin-top: 40px;
+    }
+
+    h1 {
+      width: 90%;
+      font-size: 45px;
+    }
+
+    p {
+      width: 80%;
+      font-size: 18px;
+      line-height: 32px;
+    }
+
+    .hero-action {
+      gap: 16px;
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 50px;
+    }
+  }
+}
