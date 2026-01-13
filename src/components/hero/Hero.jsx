@@ -29,8 +29,7 @@ const Hero = () => {
           className="hero-resume"
           onClick={() => {
             window.open(
-              "https://docs.google.com/document/d/1lCY02NBb2anI4SQJ8gM9mQxr7FR4m_yyydoceVCj5Ko/edit?usp=sharing",
-              "_blank"
+              "https://docs.google.com/document/d/1lCY02NBb2anI4SQJ8gM9mQxr7FR4m_yyydoceVCj5Ko/export?format=pdf"
             );
           }}
         >

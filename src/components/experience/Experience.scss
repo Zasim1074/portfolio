@@ -70,7 +70,7 @@ $text-white: #ffffff;
     }
 
     h3 {
-      font-size: 16px;
+      font-size: 17px;
       font-weight: 500;
       margin: 6px 0 4px;
     }
@@ -130,7 +130,7 @@ $text-white: #ffffff;
 @media (max-width: 768px) {
   .experience {
     gap: 40px;
-    margin: 50px 70px;
+    margin: 50px 30px;
     align-items: start;
 
     .experience-title {
@@ -148,6 +148,68 @@ $text-white: #ffffff;
 
     .role {
       padding: 20px;
+      margin: 0;
+      width: auto;
+      // box-shadow: none;
+      .role-description {
+        hr {
+          height: 6px;
+        }
+
+        ul {
+          text-align: justify;
+          li {
+            padding-left: 16px;
+            font-size: 17px;
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 490px) {
+  .experience {
+    gap: 30px;
+    margin: 50px 20px;
+    align-items: start;
+
+    .experience-title {
+      h1 {
+        font-size: 45px;
+        padding: 0;
+        font-weight: 600;
+      }
+
+      img {
+        width: 110px;
+        // margin-right: -20px;
+        right: 0;
+      }
+    }
+
+    .role {
+      padding: 0;
+      box-shadow: none;
+
+      .role-company {
+        gap: 10px;
+
+        img {
+          width: 48px;
+          height: 48px;
+        }
+
+        h1 {
+          font-size: 20px;
+        }
+
+        h3 {
+          margin: 2px 0;
+        }
+      }
+
       .role-description {
         hr {
           height: 6px;

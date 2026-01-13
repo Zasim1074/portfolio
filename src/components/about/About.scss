@@ -164,7 +164,7 @@
     }
 
     &:hover svg {
-      transform: scale(1.35);
+      transform: scale(1.2);
       filter: drop-shadow(0 0 16px var(--icon-color));
     }
 
@@ -199,7 +199,7 @@
 @media (max-width: 768px) {
   .about {
     gap: 40px;
-    margin: 50px 70px;
+    margin: 50px 40px;
     align-items: start;
 
     .about-title {
@@ -243,6 +243,55 @@
           height: 72px;
           width: 72px;
           margin-right: 60px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 490px) {
+  .about {
+    gap: 30px;
+    margin: 30px 30px;
+    align-items: start;
+
+    .about-title {
+      h1 {
+        font-size: 40px;
+      }
+
+      img {
+        width: 90px;
+        right: 0px;
+      }
+    }
+
+    .about-section {
+      flex-direction: row;
+      gap: 10px;
+
+      .about-para {
+        width: 100%;
+        font-size: 17px;
+        line-height: 25px;
+        margin-bottom: 0;
+        font-weight: 400;
+
+        hr {
+          height: 5px;
+          margin-top: 0;
+        }
+      }
+    }
+
+    .skills-marquee {
+      .skills-track {
+        animation: scroll-left 15s linear infinite;
+
+        .skill-item {
+          height: 60px;
+          width: 60px;
+          margin-right: 50px;
         }
       }
     }
