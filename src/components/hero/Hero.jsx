@@ -25,7 +25,7 @@ const Hero = () => {
           {" "}
           <div className="hero-connect">Connect With Me</div>
         </AnchorLink>
-        <div
+        <a
           className="hero-resume"
           onClick={() => {
             window.open(
@@ -34,7 +34,7 @@ const Hero = () => {
           }}
         >
           My Resume
-        </div>
+        </a>
       </div>
     </div>
   );

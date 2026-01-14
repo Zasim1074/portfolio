@@ -11,7 +11,7 @@ $text-white: #ffffff;
   flex-direction: column;
   align-items: center;
   gap: 60px;
-  margin: 80px 190px;
+  margin: 80px 120px;
 
   //  TITLE
   &-title {
@@ -114,6 +114,11 @@ $text-white: #ffffff;
       line-height: 1.2;
       color: #d1d5db;
 
+      .highlight {
+        color: $primary-orange; // chnage color
+        // color: $primary-purple;
+      }
+
       &::before {
         content: "•";
         position: absolute;
@@ -122,6 +127,40 @@ $text-white: #ffffff;
         font-size: 22px;
         line-height: 1;
         color: $primary-purple;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .experience {
+    gap: 40px;
+    margin: 50px 80px;
+    align-items: center;
+
+    .experience-title {
+      h1 {
+        font-size: 60px;
+      }
+
+      img {
+        width: 110px;
+        margin-right: 0px;
+      }
+    }
+
+    .role {
+      padding: 20px;
+      width: auto;
+
+      .role-description {
+        hr {
+          height: 8px;
+        }
+
+        ul {
+          text-align: justify;
+        }
       }
     }
   }

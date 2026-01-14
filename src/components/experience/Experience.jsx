@@ -4,13 +4,37 @@ import theme_pattern from "../../assets/theme_pattern.svg";
 import fw_logo from "../../assets/experience/fw_logo.png";
 
 const fw_role_description = [
-  "Built and maintained responsive web applications using React.js, JavaScript (ES6+), HTML, and CSS, ensuring cross-browser compatibility.",
-  "Developed 2 fully responsive cross-platform mobile & tablet applications using Flutter, deployed for internal/client use.",
-  "Integrated REST APIs and WebSockets to handle real-time data updates and dynamic UI rendering",
-  "Created reusable UI components and Flutter widgets to improve development speed and maintain consistency.",
-  "Collaborated with backend developers and designers to deliver production-ready features under tight deadlines.",
-  "Focused purely on frontend architecture, performance optimization, and UI/UX, no backend ownership.",
+  "Worked on client-facing public web platforms **(floorwalk.in, nps.floorwalk.in)** used by customers and enterprise clients.",
+  "Contributed to high-traffic React web applications, focusing on complex forms, validations, and stable UI behavior at scale.",
+  "Optimized frontend builds by improving asset handling, code splitting, and dependency usage, reducing production bundle size from **~87 MB to ~13 MB** on one web application.",
+  "Improved initial page load performance on a production website, reducing load time from **~5–6 seconds to ~3–4 seconds** through frontend performance optimizations.",
+  "Maintained and enhanced existing production codebases, adapting UI frequently to evolving APIs and business requirements.",
+  "Developed and maintained **two cross-platform B2B** Flutter applications.",
+  "An admin dashboard(**FloorInsights Admin**) for monitoring real-time survey data. An NPS survey application(**FloorInsights**) deployed across client stores, showrooms, and offices.",
+  "Applications are actively used by internal employees, managers, enterprise clients, and end customers to capture real-time feedback.",
+  "Implemented real-time dashboards using **WebSockets**, along with authentication, form validations, file uploads, charts, and detailed reports.",
+  "Built **multi-language UI support (8+ languages)** with real-time on-screen translation and integrated **Firebase notifications** for live updates.",
+  "Handled frequent UI and workflow changes driven by API updates and reporting requirements in production environments.",
+  "Focused exclusively on frontend architecture, performance, and UI/UX, with no backend ownership.",
 ];
+
+const HighlightedText = ({ text }) => {
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+
+  return (
+    <span>
+      {parts.map((part, index) =>
+        part.startsWith("**") ? (
+          <strong key={index} className="highlight">
+            {part.replace(/\*\*/g, "")}
+          </strong>
+        ) : (
+          part
+        )
+      )}
+    </span>
+  );
+};
 
 const Experience = () => {
   return (
@@ -34,7 +58,10 @@ const Experience = () => {
           <hr />
           <ul>
             {fw_role_description.map((description, idx) => (
-              <li key={idx}>{description}</li>
+              <li key={idx}>
+                {" "}
+                <HighlightedText text={description} />{" "}
+              </li>
             ))}
           </ul>
         </div>
