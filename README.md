@@ -79,7 +79,6 @@ Code snippet manager for saving and reusing code.
 
 ## 📸 Preview
 
-_Add a screenshot or GIF here (important for recruiters)_
 ![Portfolio Preview](./public/preview.png)
 
 ---
