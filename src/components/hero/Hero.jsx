@@ -25,11 +25,22 @@ const Hero = () => {
           {" "}
           <div className="hero-connect">Connect With Me</div>
         </AnchorLink>
+        {/* <a
+          className="hero-resume"
+          onClick={() => {
+            window.open(
+              "https://docs.google.com/document/d/1_1lrN_8E4yJmf8emc7gMcQCuBBCk0OOwFdoB7OQY4y4/edit?usp=sharing/export?format=pdf",
+            );
+          }}
+        >
+          My Resume
+        </a> */}
         <a
           className="hero-resume"
           onClick={() => {
             window.open(
-              "https://docs.google.com/document/d/1lCY02NBb2anI4SQJ8gM9mQxr7FR4m_yyydoceVCj5Ko/export?format=pdf"
+              "https://docs.google.com/document/d/1_1lrN_8E4yJmf8emc7gMcQCuBBCk0OOwFdoB7OQY4y4/export?format=pdf",
+              "_blank",
             );
           }}
         >

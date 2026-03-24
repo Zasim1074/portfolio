@@ -15,14 +15,19 @@ const MyWork = () => {
         <div className="mywork-container">
           {mywork_data.map((work, idx) => {
             return (
-              <img
+              <div
                 key={idx}
-                src={work.w_img}
-                alt="work_image"
+                className="mywork-item"
                 onClick={() => {
                   window.open(work.w_link);
                 }}
-              />
+              >
+                <img src={work.w_img} alt="work_image" />
+                <div className="mywork-item-description">
+                  <h3>{work.w_name}</h3>
+                  <p>{work.w_desc}</p>
+                </div>
+              </div>
             );
           })}
         </div>
@@ -32,7 +37,7 @@ const MyWork = () => {
           onClick={() => {
             window.open(
               "https://github.com/Zasim1074?tab=repositories",
-              "_blank"
+              "_blank",
             );
           }}
         >
