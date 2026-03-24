@@ -1,24 +1,93 @@
-<<<<<<< HEAD
+# Jaseem Quraishi — Portfolio
 
-# portfolio
+🚀 **Live:** https://jaseem-codes.vercel.app/
 
-=======
+---
 
-# React + Vite
+## 🧠 Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my personal portfolio built to showcase my work as a **Frontend Developer (React & Flutter)**.
 
-Currently, two official plugins are available:
+The focus is not just UI, but:
+- Clean architecture
+- Smooth user experience
+- Performance-conscious design
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ⚙️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend:** React (Vite), JavaScript (ES6+)
+- **Styling:** SCSS (modular & structured)
+- **Deployment:** Vercel
+- **Design Focus:** Responsive + modern UI patterns
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Key Features
 
-> > > > > > > 455a6c9 (added repo)
+- Fully responsive (mobile-first approach)
+- Smooth hover and transition animations
+- Project showcase with live demos
+- Resume download (PDF)
+- Clean and minimal UI
+
+---
+
+## 🧩 Featured Projects
+
+### 🔹 TrackHire
+Job tracking platform to manage applications, track status, and organize job search workflow.
+
+### 🔹 Movie Space
+Movie discovery app using external APIs with search and filtering.
+
+### 🔹 Tasty Burger
+Food ordering UI with dynamic menu and cart functionality.
+
+### 🔹 Notes Taker
+Lightweight notes app with local storage persistence.
+
+### 🔹 Code Book
+Code snippet manager for saving and reusing code.
+
+---
+
+## 🏗️ Architecture & Decisions
+
+### Why Vite?
+- Faster dev server and build times
+- Better DX compared to CRA
+
+### Why SCSS?
+- Cleaner structure than plain CSS
+- Easier nesting and maintainability
+
+### Component Design
+- Reusable components
+- Separation of UI and data (helper files for project data)
+
+---
+
+## ⚡ Performance Considerations
+
+- Optimized image rendering
+- Minimal re-renders with clean component structure
+- Lightweight bundle using Vite
+
+---
+
+## 📸 Preview
+
+_Add a screenshot or GIF here (important for recruiters)_
+![Portfolio Preview](./public/preview.png)
+
+---
+
+## 🛠️ Getting Started
+
+```bash
+git clone https://github.com/Zasim1074/portfolio.git
+cd portfolio
+npm install
+npm run dev
