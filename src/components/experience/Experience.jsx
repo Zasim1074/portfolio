@@ -4,18 +4,23 @@ import theme_pattern from "../../assets/theme_pattern.svg";
 import fw_logo from "../../assets/experience/fw_logo.png";
 
 const fw_role_description = [
-  "Worked on client-facing public web platforms **(floorwalk.in, nps.floorwalk.in)** used by customers and enterprise clients.",
-  "Contributed to high-traffic React web applications, focusing on complex forms, validations, and stable UI behavior at scale.",
-  "Optimized frontend builds by improving asset handling, code splitting, and dependency usage, reducing production bundle size from **~87 MB to ~13 MB** on one web application.",
-  "Improved initial page load performance on a production website, reducing load time from **~5–6 seconds to ~3–4 seconds** through frontend performance optimizations.",
-  "Maintained and enhanced existing production codebases, adapting UI frequently to evolving APIs and business requirements.",
-  "Developed and maintained **two cross-platform B2B** Flutter applications.",
-  "An admin dashboard(**FloorInsights Admin**) for monitoring real-time survey data. An NPS survey application(**FloorInsights**) deployed across client stores, showrooms, and offices.",
-  "Applications are actively used by internal employees, managers, enterprise clients, and end customers to capture real-time feedback.",
-  "Implemented real-time dashboards using **WebSockets**, along with authentication, form validations, file uploads, charts, and detailed reports.",
-  "Built **multi-language UI support (8+ languages)** with real-time on-screen translation and integrated **Firebase notifications** for live updates.",
-  "Handled frequent UI and workflow changes driven by API updates and reporting requirements in production environments.",
-  "Focused exclusively on frontend architecture, performance, and UI/UX, with no backend ownership.",
+  "Built and maintained **high-traffic client-facing platforms (floorwalk.in, nps.floorwalk.in)** used by enterprise clients and end customers.",
+
+  "Developed scalable **React applications with complex forms, validations, and dynamic UI** driven by evolving APIs.",
+
+  "Reduced production bundle size from **~87 MB to ~13 MB** by optimizing asset handling, code splitting, and dependencies.",
+
+  "Improved initial page load time from **~5–6 seconds to ~3–4 seconds** through frontend performance optimizations.",
+
+  "Built and maintained **two cross-platform B2B Flutter applications** for real-time survey and feedback systems.",
+
+  "Developed an admin dashboard (**FloorInsights Admin**) for real-time analytics and an NPS application (**FloorInsights**) deployed across stores and offices.",
+
+  "Implemented **real-time dashboards using WebSockets**, including authentication, file uploads, charts, and reporting features.",
+
+  "Built **multi-language support (8+ languages)** with dynamic translations and integrated **Firebase notifications** for live updates.",
+
+  "Adapted quickly to **frequent API and product requirement changes** in production environments.",
 ];
 
 const HighlightedText = ({ text }) => {
@@ -30,7 +35,7 @@ const HighlightedText = ({ text }) => {
           </strong>
         ) : (
           part
-        )
+        ),
       )}
     </span>
   );

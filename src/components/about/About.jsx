@@ -13,26 +13,30 @@ import {
   FaReact,
   FaServer,
 } from "react-icons/fa";
-import { SiBootstrap, SiExpress, SiFlutter } from "react-icons/si";
+import { SiBootstrap, SiExpress, SiFlutter, SiNextdotjs, SiPostman, SiReactquery, SiTypescript } from "react-icons/si";
 import { MdOutlineSyncAlt } from "react-icons/md";
-
+import { FaDiagramNext, FaT } from "react-icons/fa6";
 const skills = [
   { Icon: FaReact, color: "#61DAFB", name: "React" },
+  { Icon: SiNextdotjs, color: "#000000", name: "Next.js" },
   { Icon: FaJsSquare, color: "#F7DF1E", name: "JavaScript (ES6+)" },
+  { Icon: SiTypescript, color: "#007ACC", name: "TypeScript" },
+
+  // 🔥 ADD HERE (near React, not at bottom)
+  { Icon: SiReactquery, color: "#FF4154", name: "React Query" },
+
   { Icon: FaHtml5, color: "#E34F26", name: "HTML5" },
   { Icon: FaCss3Alt, color: "#1572B6", name: "CSS3" },
   { Icon: SiBootstrap, color: "#7952B3", name: "Bootstrap" },
 
   { Icon: SiFlutter, color: "#02569B", name: "Flutter" },
 
-  { Icon: FaNode, color: "#339933", name: "Node.js" },
-  { Icon: SiExpress, color: "#FFFFFF", name: "Express.js" },
-
   { Icon: FaServer, color: "#4CAF50", name: "REST APIs" },
   { Icon: MdOutlineSyncAlt, color: "#9C27B0", name: "WebSocket" },
 
   { Icon: FaGitAlt, color: "#F05032", name: "Git" },
-];
+  { Icon: SiPostman, color: "#FF6C37", name: "Postman" },
+]; 
 
 const About = () => {
   return (
