@@ -6,8 +6,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import menu_open from "../../assets/menu_open.svg";
 import menu_close from "../../assets/menu_close.svg";
 
-const Navbar = () => {
-  const [menu, setMenu] = useState("hero");
+const Navbar = ({ menu, setMenu }) => {
   const menuRef = useRef(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 

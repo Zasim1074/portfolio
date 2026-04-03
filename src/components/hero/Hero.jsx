@@ -1,9 +1,10 @@
-import React, { Profiler } from "react";
+import React, { Profiler, useState } from "react";
 import profileImage from "../../assets/profile_img.png";
 import "./Hero.scss";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
-const Hero = () => {
+const Hero = ({ setMenu }) => {
+  
   return (
     <div id="hero" className="hero">
       <img src={profileImage} alt="profile-image" />
@@ -20,21 +21,11 @@ const Hero = () => {
           className="anchor-link"
           href={"#contact"}
           offset={50}
-          onClick={() => setMenu("contact")}
+          onClick={() => setMenu?.("contact")}
         >
           {" "}
           <div className="hero-connect">Connect With Me</div>
         </AnchorLink>
-        {/* <a
-          className="hero-resume"
-          onClick={() => {
-            window.open(
-              "https://docs.google.com/document/d/1_1lrN_8E4yJmf8emc7gMcQCuBBCk0OOwFdoB7OQY4y4/edit?usp=sharing/export?format=pdf",
-            );
-          }}
-        >
-          My Resume
-        </a> */}
         <a
           className="hero-resume"
           onClick={() => {
