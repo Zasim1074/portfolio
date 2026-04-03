@@ -96,13 +96,14 @@
         color: #d8d8d8;
         font-size: 22px;
 
-        .contact-detail {
+        a {
           display: flex;
           flex-direction: row;
           align-items: center;
           justify-content: center;
           gap: 20px;
           cursor: pointer;
+          text-decoration: none;
 
           p {
             margin: auto;

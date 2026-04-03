@@ -7,14 +7,15 @@ import linkedin_icon from "../../assets/linkedin_icon.svg";
 import github_icon from "../../assets/github_icon.svg";
 import location_icon from "../../assets/location_icon.svg";
 
+const myAccessKey = import.meta.env.VITE_WEB3FORMS_KEY;
+
 const Contact = () => {
+  const [loading, setLoading] = useState(false);
   const [alert, setAlert] = useState({
     show: false,
     message: "",
     type: "",
   });
-
-  var myAccessKey = "84c15ae6-9091-4874-9e9e-0943804eed11";
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -42,6 +43,8 @@ const Contact = () => {
     formData.append("access_key", myAccessKey);
 
     try {
+      setLoading(true);
+
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData,
@@ -51,16 +54,23 @@ const Contact = () => {
 
       if (data.success) {
         form.reset();
-
+        setLoading(false);
         setAlert({
           show: true,
-          message: "Message sent successfully. I’ll get back to you soon!",
+          message: "Message sent successfully. I’ll respond within 24 hours.",
           type: "success",
         });
       } else {
+        setLoading(false);
+        setAlert({
+          show: true,
+          message: "Failed to send message. Please try again later.",
+          type: "error",
+        });
         throw new Error("Submission failed");
       }
     } catch (error) {
+      setLoading(false);
       setAlert({
         show: true,
         message: "Something went wrong. Please try again.",
@@ -86,68 +96,56 @@ const Contact = () => {
       <div className="contact-section">
         <div className="contact-left">
           <h1>Let's Talk</h1>
+
           <p>
-            If you’re looking for someone who understands frontend fundamentals,
-            works with APIs, and actually ships features instead of just talking
-            about them, feel free to reach out. I’m open to full-time roles,
-            freelance work, and serious collaborations.
+            Open to frontend roles and ready to contribute immediately. I build
+            scalable, high-performance UI systems—reach out if you’re hiring,
+            collaborating, or building something meaningful.
           </p>
+
           <div className="contact-details">
-            <div
-              className="contact-detail"
-              onClick={() => {
-                window.open("https://github.com/Zasim1074", "_blank");
-              }}
-            >
-              <img src={github_icon} color="white" alt="github_icon" />
-              <p>GitHub</p>
-            </div>
-
-            <div
-              className="contact-detail"
-              onClick={() => {
-                window.open(
-                  "https://www.linkedin.com/in/jaseem-quraishi/",
-                  "_blank"
-                );
-              }}
-            >
-              <img src={linkedin_icon} alt="linkedin_icon" />
-              <p>LinkedIn</p>
-            </div>
-
-            <div
-              className="contact-detail"
-              onClick={() => {
-                window.open(
-                  "https://mail.google.com/mail/u/0/#inbox?compose=jrjtXLCBztXpBCGgCGnHrscssRfPfflrWbzkRtnPlMvrRFqRHvMPTdKRXsJjbbGgMspnCsWT"
-                );
-              }}
-            >
-              <img src={mail_icon} alt="mail_icon" />
-              <p>rdgvszasim@gmail.com</p>
-            </div>
-            <div className="contact-detail">
-              <img src={call_icon} alt="call_icon" />
-              <p>+91 955-5917-856</p>
-            </div>
-
-            <div
-              className="contact-detail"
-              onClick={() => {
-                window.open(
-                  "https://maps.app.goo.gl/ikFTKudV5zEW1DJJ9",
-                  "_blank"
-                );
-              }}
+            <a
+              href="https://maps.app.goo.gl/ikFTKudV5zEW1DJJ9"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <img src={location_icon} alt="location_icon" />
               <p>Indore, India</p>
-            </div>
+            </a>
+
+            <a
+              href="https://github.com/Zasim1074"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={github_icon} alt="github" />
+              <p>GitHub</p>
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/jaseem-quraishi/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={linkedin_icon} alt="linkedin" />
+              <p>LinkedIn</p>
+            </a>
+
+            <a href="mailto:rdgvszasim@gmail.com">
+              <img src={mail_icon} alt="email" />
+              <p>Email</p>
+            </a>
+
+            <a href="tel:+919555917856">
+              <img src={call_icon} alt="Call Jaseem" />
+              <p>+91 95559 17856</p>
+            </a>
           </div>
         </div>
 
         <form onSubmit={onSubmit} className="contact-right">
+          {/* <p className="availability">Available for immediate opportunities</p> */}
+
           <label htmlFor="">Your Name</label>
           <input
             type="text"
@@ -172,8 +170,8 @@ const Contact = () => {
             required
           ></textarea>
 
-          <button className="contact-submit" type="submit">
-            Submit Now
+          <button disabled={loading} className="contact-submit" type="submit">
+            {loading ? "Sending..." : "Send Message"}
           </button>
         </form>
       </div>

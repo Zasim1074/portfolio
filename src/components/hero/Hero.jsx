@@ -4,18 +4,20 @@ import "./Hero.scss";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const Hero = ({ setMenu }) => {
-  
   return (
     <div id="hero" className="hero">
       <img src={profileImage} alt="profile-image" />
+
       <h1>
-        <span>I'm Jaseem Quraishi,</span> Frontend Developer (React Web ·
-        Flutter Mobile) based in India.
+        <span>I'm Jaseem Quraishi,</span> a Frontend Engineer building
+        high-performance <span>React & Next.js Applications.</span>
       </h1>
+
       <p>
-        I build responsive web applications using React and modern JavaScript,
-        and cross-platform mobile apps using Flutter.
+        Built high-performance web apps with real-time features, reducing bundle
+        size by <strong>80%+</strong> and improving production load times.
       </p>
+
       <div className="hero-action">
         <AnchorLink
           className="anchor-link"

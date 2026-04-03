@@ -13,7 +13,15 @@ import {
   FaReact,
   FaServer,
 } from "react-icons/fa";
-import { SiBootstrap, SiExpress, SiFlutter, SiNextdotjs, SiPostman, SiReactquery, SiTypescript } from "react-icons/si";
+import {
+  SiBootstrap,
+  SiExpress,
+  SiFlutter,
+  SiNextdotjs,
+  SiPostman,
+  SiReactquery,
+  SiTypescript,
+} from "react-icons/si";
 import { MdOutlineSyncAlt } from "react-icons/md";
 import { FaDiagramNext, FaT } from "react-icons/fa6";
 const skills = [
@@ -36,7 +44,7 @@ const skills = [
 
   { Icon: FaGitAlt, color: "#F05032", name: "Git" },
   { Icon: SiPostman, color: "#FF6C37", name: "Postman" },
-]; 
+];
 
 const About = () => {
   return (
@@ -54,16 +62,21 @@ const About = () => {
           <div className="about-para">
             <hr />
             <p>
-              I am a frontend developer specializing in building responsive web
-              applications using React and modern JavaScript. I also have
-              experience developing cross-platform mobile applications using
-              Flutter.
+              I’m a frontend engineer focused on building scalable,
+              production-grade web applications using React and modern
+              JavaScript. My work involves optimizing performance, handling
+              complex state and real-time data, and building reliable UI systems
+              for production environments. I’ve significantly reduced bundle
+              sizes and improved load performance in live applications used by
+              enterprise clients.
             </p>
             <p>
-              My work involves converting UI designs into functional interfaces,
-              managing component state, integrating APIs, and writing clean,
-              maintainable code. I am currently focused on strengthening my
-              frontend fundamentals and preparing for frontend developer roles.
+              I also have experience developing cross-platform B2B mobile
+              applications using Flutter, including real-time dashboards and
+              feedback systems deployed across multiple client environments. I’m
+              currently focused on deepening my expertise in frontend
+              architecture, performance optimization, and building systems that
+              scale efficiently.
             </p>
           </div>
         </div>
