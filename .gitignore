@@ -27,3 +27,4 @@ obj/
 
 # Environment variables
 .env
+.env.local
