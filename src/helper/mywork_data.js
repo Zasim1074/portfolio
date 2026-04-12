@@ -16,23 +16,23 @@ const mywork_data = [
   },
   {
     w_no: 2,
-    w_name: "Tasty Burger",
+    w_name: "Sanwariya Hotel — Production Website",
     w_desc:
-      "Responsive food ordering UI with dynamic menu rendering, cart management, and smooth user experience.",
+      "Live business website built using React and Tailwind CSS with SEO optimization, responsive design, and fast load performance for real users.",
     w_img: project2_img,
-    w_link: "https://hungry-hunters.vercel.app/",
+    w_link: "https://sanwariyahotel.com/",
   },
   {
     w_no: 3,
-    w_name: "Personal Portfolio",
+    w_name: "Tasty Burger - Food Delivery App",
     w_desc:
-      "Modern developer portfolio showcasing projects, skills, and experience with optimized performance and clean UI design.",
+      "Responsive food ordering UI with dynamic menu rendering, cart management, and smooth user experience.",
     w_img: project3_img,
-    w_link: "https://jaseem-codes.vercel.app/",
+    w_link: "https://hungry-hunters.vercel.app/",
   },
   {
     w_no: 4,
-    w_name: "Movie Space",
+    w_name: "Movie Space - Movie Wikipedia",
     w_desc:
       "Movie discovery app integrating external APIs for searching, filtering, and viewing movie details in real-time.",
     w_img: project4_img,
@@ -48,7 +48,7 @@ const mywork_data = [
   },
   {
     w_no: 6,
-    w_name: "Code Book",
+    w_name: "Code Book - An Online Code Editor",
     w_desc:
       "Code snippet manager for saving, organizing, and quickly accessing reusable code blocks.",
     w_img: project6_img,

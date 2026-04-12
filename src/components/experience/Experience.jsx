@@ -4,23 +4,16 @@ import theme_pattern from "../../assets/theme_pattern.svg";
 import fw_logo from "../../assets/experience/fw_logo.png";
 
 const fw_role_description = [
-  "Built and maintained **high-traffic client-facing platforms (floorwalk.in, nps.floorwalk.in)** used by enterprise clients and end customers.",
-
-  "Developed scalable **React applications with complex forms, validations, and dynamic UI** driven by evolving APIs.",
-
-  "Reduced production bundle size from **~87 MB to ~13 MB** by optimizing asset handling, code splitting, and dependencies.",
-
-  "Improved initial page load time from **~5–6 seconds to ~3–4 seconds** through frontend performance optimizations.",
-
-  "Built and maintained **two cross-platform B2B Flutter applications** for real-time survey and feedback systems.",
-
-  "Developed an admin dashboard (**FloorInsights Admin**) for real-time analytics and an NPS application (**FloorInsights**) deployed across stores and offices.",
-
-  "Implemented **real-time dashboards using WebSockets**, including authentication, file uploads, charts, and reporting features.",
-
-  "Built **multi-language support (8+ languages)** with dynamic translations and integrated **Firebase notifications** for live updates.",
-
-  "Adapted quickly to **frequent API and product requirement changes** in production environments.",
+"Improved React application performance by reducing **bundle size from 70MB → 13MB (-81%)**, decreasing load-time (~6s → ~4s).",
+"Identified and resolved performance bottlenecks using Chrome DevTools, reducing **interaction latency (~300ms→ ~150ms)**.",
+"Built real-time analytics dashboards using WebSockets, handling high-frequency updates.",
+"**Reduced unnecessary component re-renders by ~40–60%** using memoization and state isolation techniques.",
+"Designed reusable component structures to reduce duplication and improve feature development speed across modules.",
+"Implemented authentication and file upload workflows with secure API integration and error handling.",
+"Implemented robust API layer with caching and retries, significantly reducing redundant API calls.",
+"Built multi-language **UI system supporting 8+ languages**.",
+"Collaborated with backend teams to adapt frontend to evolving APIs.",
+"Took ownership of frontend performance optimization initiatives across key application modules.",
 ];
 
 const HighlightedText = ({ text }) => {
