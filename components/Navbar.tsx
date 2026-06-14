@@ -14,7 +14,7 @@ export function Navbar() {
       <div className="section-inner flex h-16 items-center justify-between px-6 sm:px-10 lg:px-16">
         <Link href="#" className="font-display text-lg font-bold tracking-tight">
           <span className="text-ink dark:text-ink-dark">Jaseem</span>
-          <span className="text-accent dark:text-accent-dark">.dev</span>
+          <span className="text-accent dark:text-accent-dark">.codes</span>
         </Link>
 
         <nav className="hidden items-center gap-8 text-sm font-medium text-muted dark:text-muted-dark md:flex">
