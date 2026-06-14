@@ -39,17 +39,13 @@ The focus is not just UI, but:
 ### 🔹 TrackHire
 Job application tracking platform — manage applications, track interview stages, and stay organized throughout a job search.
 
+
+### 🔹 Hotel Sanwariya
+A modern hospitality website featuring room showcases, amenities, gallery, booking inquiries, SEO optimization, & a fully responsive design
+
+
 ### 🔹 Code Book
 Browser-based code editor and snippet manager for writing, running, and reusing code.
-
-### 🔹 Movie Space
-Movie discovery app using external APIs with search and filtering.
-
-### 🔹 Tasty Burger
-Food ordering UI with dynamic menu and cart functionality.
-
-### 🔹 Notes Taker
-Lightweight notes app with local storage persistence.
 
 ---
 
