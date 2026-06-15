@@ -73,9 +73,13 @@ Browser-based code editor and snippet manager for writing, running, and reusing 
 
 ---
 
-## 📸 Preview
+## 📸 Preview - Light Mode
 
-![Portfolio Preview](./public/preview.png)
+![Portfolio Preview](./public/preview1.png)
+
+## 📸 Preview - Dark Mode
+
+![Portfolio Preview](./public/preview2.png)
 
 ---
 
