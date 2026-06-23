@@ -17,7 +17,7 @@ export const profile = {
   linkedin: "linkedin.com/in/jaseem-quraishi/",
   linkedinUrl: "https://www.linkedin.com/in/jaseem-quraishi",
   resumeUrl:
-    "https://docs.google.com/document/d/1_1lrN_8E4yJmf8emc7gMcQCuBBCk0OOwFdoB7OQY4y4/export?format=pdf",
+  "https://docs.google.com/document/d/19D_BMhAcrjJqbBVQrMn7y4waBHo2xmsOpoprTVGgMNM/export?format=pdf",
 };
 
 export const about = {
