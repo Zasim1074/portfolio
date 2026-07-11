@@ -5,8 +5,8 @@ export function Hero() {
   return (
     <section className="section pb-16 pt-20 text-center">
       <div className="section-inner flex flex-col items-center">
-        <span className="badge border-accent/30 bg-accent/10 text-accent dark:text-accent-dark">
-          <span className="mr-2 h-1.5 w-1.5 rounded-full bg-accent dark:bg-accent-dark" />
+        <span className="badge border-green-500/30 bg-green-500/10 text-green-600 dark:border-green-400/30 dark:bg-green-400/10 dark:text-green-400">
+          <span className="mr-2 h-1.5 w-1.5 rounded-full bg-green-500 dark:bg-green-400" />
           Open to new opportunities
         </span>
 

@@ -10,8 +10,8 @@ export const profile = {
     "Performance Engineering",
   ],
   location: "Indore, India",
-  relocate: "Open to relocating to Delhi NCR or Bangalore",
-  email: "rdgvszasim@gmail.com",
+  relocate: "Open to relocating to Delhi NCR",
+  email: "jaseem1quraishi@gmail.com",
   github: "github.com/Zasim1074",
   githubUrl: "https://github.com/Zasim1074",
   linkedin: "linkedin.com/in/jaseem-quraishi/",
@@ -23,7 +23,7 @@ export const profile = {
 export const about = {
   paragraphs: [
     "I'm a Frontend Developer with 1 year of production experience building performance-critical React applications. I specialize in optimizing web performance \u2014 achieving an 81% bundle size reduction and building real-time WebSocket dashboards for high-frequency data.",
-    "Based in Indore, India. Open to relocating to Delhi NCR or Bangalore for the right opportunity.",
+    "Based in Indore, India. Open to relocating to Delhi NCR for the right opportunity.",
   ],
   stats: [
     {
@@ -44,7 +44,7 @@ export const about = {
     },
     {
       title: "Indore, India",
-      desc: "Open to relocating to Delhi NCR or Bangalore",
+      desc: "Open to relocating to Delhi NCR",
     },
     {
       title: "5+ Modules",
@@ -89,9 +89,9 @@ export const skills = [
     items: ["Git", "GitHub", "Vite", "Postman", "Vercel"],
   },
   {
-    group: "Secondary",
+    group: "Also Familiar With",
     color: "slate",
-    items: ["Flutter", "Python"],
+    items: ["React Native", "Flutter", "Python", "SQL", "SQL Alchemy"],
   },
 ];
 
@@ -102,7 +102,7 @@ export const experience = [
     period: "01 Aug 2025 \u2013 Present",
     location: "Indore, India",
     points: [
-      "Cut production bundle from 70MB → 13MB (−81%) via dead code elimination, tree shaking, and image compression — load time dropped from ~6s to ~4s.",
+      "Cut production bundle from 70MB → 13MB (-81%) via dead code elimination, tree shaking, and image compression — load time dropped from ~6s to ~4s.",
       "Engineered real-time analytics dashboards over WebSockets with high-frequency UI rendering; optimized to eliminate unnecessary re-renders.",
       "Built a full-featured real estate CRM handling leads, brokers, properties, and follow-up workflows with role-based access (Manager, Broker, Staff).",
       "Designed a custom API layer with caching and retry logic that eliminated redundant network calls and reduced backend server costs.",
