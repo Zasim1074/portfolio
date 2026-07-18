@@ -27,7 +27,7 @@ const item = {
 
 export function Hero() {
   return (
-    <section className="section pb-16 pt-20 text-center relative min-h-screen flex items-center perspective-3d">
+    <section id="home" className="section pb-16 pt-20 text-center relative min-h-screen flex items-center perspective-3d">
       {/* Animated background gradients */}
       <motion.div
         className="absolute inset-0 -z-10"

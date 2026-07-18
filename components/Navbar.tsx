@@ -10,26 +10,30 @@ import { motion, AnimatePresence } from "framer-motion";
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-  const [activeLink, setActiveLink] = useState("");
+  const [activeLink, setActiveLink] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
 
-      // Update active link based on scroll position
-      const sections = navLinks.map((link) => link.href.slice(1));
+      const sections = ["home", ...navLinks.map((link) => link.href.slice(1))];
+      let matched = "home";
+
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
           if (rect.top <= 100 && rect.bottom >= 100) {
-            setActiveLink(section);
+            matched = section;
             break;
           }
         }
       }
+
+      setActiveLink(matched);
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -50,10 +54,11 @@ export function Navbar() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
+          className="relative"
         >
           <Link
-            href="#"
-            className="font-display text-lg font-bold tracking-tight"
+            href="#home"
+            className="font-display text-lg font-bold tracking-tight relative px-1 py-1"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
@@ -67,46 +72,55 @@ export function Navbar() {
             >
               .codes
             </motion.span>
+            {activeLink === "home" && (
+              <motion.div
+                className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent dark:bg-accent-dark"
+                layoutId="underline"
+                transition={{ duration: 0.3 }}
+              />
+            )}
           </Link>
         </motion.div>
 
         {/* Desktop Navigation */}
         <motion.nav
-          className="hidden items-center gap-8 text-sm font-medium text-muted dark:text-muted-dark md:flex"
+          className="hidden items-center gap-6 text-sm font-medium text-muted dark:text-muted-dark md:flex mx-5"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          {navLinks.map((link, idx) => {
-            const isActive = activeLink === link.href.slice(1);
-            return (
-              <motion.div
-                key={link.href}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: idx * 0.05 }}
-                className="relative"
-              >
-                <a
-                  href={link.href}
-                  className={`relative px-2 py-1 transition-colors ${
-                    isActive
-                      ? "text-accent dark:text-accent-dark font-semibold"
-                      : "text-muted dark:text-muted-dark hover:text-ink dark:hover:text-ink-dark"
-                  }`}
+          {navLinks
+            .filter((link) => link.href.slice(1) !== "home")
+            .map((link, idx) => {
+              const isActive = activeLink === link.href.slice(1);
+              return (
+                <motion.div
+                  key={link.href}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: idx * 0.05 }}
+                  className="relative"
                 >
-                  {link.label}
-                  {isActive && (
-                    <motion.div
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent dark:bg-accent-dark"
-                      layoutId="underline"
-                      transition={{ duration: 0.3 }}
-                    />
-                  )}
-                </a>
-              </motion.div>
-            );
-          })}
+                  <a
+                    href={link.href}
+                    className={`relative px-2 py-1 transition-colors ${
+                      isActive
+                        ? "text-accent dark:text-accent-dark font-semibold"
+                        : "text-muted dark:text-muted-dark hover:text-ink dark:hover:text-ink-dark"
+                    }`}
+                  >
+                    {link.label}
+                    {isActive && (
+                      <motion.div
+                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent dark:bg-accent-dark"
+                        layoutId="underline"
+                        transition={{ duration: 0.3 }}
+                      />
+                    )}
+                  </a>
+                </motion.div>
+              );
+            })}
         </motion.nav>
 
         {/* Desktop CTA */}
