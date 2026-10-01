@@ -1,22 +1,24 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { navLinks, profile } from "@/lib/data";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [activeLink, setActiveLink] = useState("home");
 
+  const sectionLinks = navLinks.filter((link) => link.href.startsWith("#"));
+
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
 
-      const sections = ["home", ...navLinks.map((link) => link.href.slice(1))];
+      const sections = ["home", ...sectionLinks.map((link) => link.href.replace("#", ""))];
       let matched = "home";
 
       for (const section of sections) {
@@ -36,197 +38,107 @@ export function Navbar() {
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [sectionLinks]);
 
-  const isScrolled = scrollY > 50;
+  const isScrolled = scrollY > 18;
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b border-border dark:border-border-dark transition-all duration-300 ${
-        isScrolled
-          ? "bg-bg/70 dark:bg-bg-dark/70 backdrop-blur-lg"
-          : "bg-bg/50 dark:bg-bg-dark/50 backdrop-blur-md"
+      className={`sticky top-0 z-50 border-b border-border bg-bg/80 backdrop-blur-md transition-colors dark:border-border-dark dark:bg-bg-dark/80 ${
+        isScrolled ? "shadow-sm shadow-slate-900/5 dark:shadow-slate-950/20" : ""
       }`}
     >
-      <div className="section-inner flex h-16 items-center justify-between px-6 sm:px-10 lg:px-16">
-        {/* Logo with animation */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="relative"
-        >
+      <div className="section-inner flex h-16 items-center justify-between px-4 sm:px-8 lg:px-10">
+        <motion.div initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.35 }}>
           <Link
             href="#home"
-            className="font-display text-lg font-bold tracking-tight relative px-1 py-1"
-            onClick={(e) => {
-              e.preventDefault();
+            className="font-display text-lg font-bold tracking-tight text-ink dark:text-ink-dark"
+            onClick={(event) => {
+              event.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
-            <span className="text-ink dark:text-ink-dark">Jaseem</span>
-            <motion.span
-              className="text-accent dark:text-accent-dark inline-block"
-              animate={{ scale: [1, 1.1, 1] }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              .codes
-            </motion.span>
-            {activeLink === "home" && (
-              <motion.div
-                className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent dark:bg-accent-dark"
-                layoutId="underline"
-                transition={{ duration: 0.3 }}
-              />
-            )}
+            Jaseem<span className="text-accent dark:text-accent-dark">.codes</span>
           </Link>
         </motion.div>
 
-        {/* Desktop Navigation */}
-        <motion.nav
-          className="hidden items-center gap-6 text-sm font-medium text-muted dark:text-muted-dark md:flex mx-5"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          {navLinks
-            .filter((link) => link.href.slice(1) !== "home")
-            .map((link, idx) => {
-              const isActive = activeLink === link.href.slice(1);
-              return (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: idx * 0.05 }}
-                  className="relative"
-                >
-                  <a
-                    href={link.href}
-                    className={`relative px-2 py-1 transition-colors ${
-                      isActive
-                        ? "text-accent dark:text-accent-dark font-semibold"
-                        : "text-muted dark:text-muted-dark hover:text-ink dark:hover:text-ink-dark"
-                    }`}
-                  >
-                    {link.label}
-                    {isActive && (
-                      <motion.div
-                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent dark:bg-accent-dark"
-                        layoutId="underline"
-                        transition={{ duration: 0.3 }}
-                      />
-                    )}
-                  </a>
-                </motion.div>
-              );
-            })}
-        </motion.nav>
+        <nav className="hidden items-center gap-4 text-sm font-medium lg:flex xl:gap-6">
+          {sectionLinks.map((link) => {
+            const isActive = activeLink === link.href.replace("#", "");
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                className={`relative px-1 py-2 transition-colors ${
+                  isActive ? "text-accent dark:text-accent-dark" : "text-muted hover:text-ink dark:text-muted-dark dark:hover:text-ink-dark"
+                }`}
+              >
+                {link.label}
+                {isActive ? (
+                  <span className="absolute inset-x-0 -bottom-1 h-0.5 rounded-full bg-accent dark:bg-accent-dark" />
+                ) : null}
+              </a>
+            );
+          })}
+        </nav>
 
-        {/* Desktop CTA */}
-        <motion.div
-          className="hidden items-center gap-3 md:flex"
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
+        <div className="hidden items-center gap-3 lg:flex">
           <ThemeToggle />
-          <motion.a
+          <a
             href={profile.resumeUrl}
-            className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white transition-all"
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0 8px 20px rgba(96, 165, 250, 0.3)",
-            }}
-            whileTap={{ scale: 0.95 }}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-accent/20 transition-transform hover:-translate-y-0.5"
           >
             Resume
-          </motion.a>
-        </motion.div>
+          </a>
+        </div>
 
-        {/* Mobile Menu Button */}
-        <motion.button
-          className="md:hidden"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
+        <button
+          type="button"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-ink lg:hidden dark:border-border-dark dark:text-ink-dark"
+          aria-label="Toggle navigation menu"
+          onClick={() => setOpen((current) => !current)}
         >
-          <AnimatePresence mode="wait">
-            {open ? (
-              <motion.div
-                key="close"
-                initial={{ rotate: -90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: 90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <X size={22} />
-              </motion.div>
-            ) : (
-              <motion.div
-                key="menu"
-                initial={{ rotate: 90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: -90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Menu size={22} />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.button>
+          {open ? <X size={18} /> : <Menu size={18} />}
+        </button>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
-        {open && (
+        {open ? (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="border-t border-border dark:border-border-dark px-6 py-4 md:hidden bg-surface/50 dark:bg-surface-dark/50 backdrop-blur-md"
+            transition={{ duration: 0.2 }}
+            className="border-t border-border bg-surface/95 px-4 py-4 lg:hidden dark:border-border-dark dark:bg-surface-dark/95"
           >
-            <motion.nav
-              className="flex flex-col gap-3 text-sm font-medium text-muted dark:text-muted-dark"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.1 }}
-            >
-              {navLinks.map((link, idx) => (
-                <motion.a
+            <nav className="flex flex-col gap-1">
+              {sectionLinks.map((link) => (
+                <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="transition-colors hover:text-accent dark:hover:text-accent-dark py-2"
-                  initial={{ x: -20, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: idx * 0.05 }}
-                  whileHover={{ x: 8 }}
+                  className="rounded-lg px-3 py-2 text-sm font-medium text-muted transition-colors hover:bg-surface2 hover:text-ink dark:text-muted-dark dark:hover:bg-surface2-dark dark:hover:text-ink-dark"
                 >
                   {link.label}
-                </motion.a>
+                </a>
               ))}
-            </motion.nav>
-            <motion.div
-              className="mt-4 flex items-center gap-3"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-            >
+            </nav>
+
+            <div className="mt-4 flex items-center justify-between gap-3">
               <ThemeToggle />
-              <motion.a
+              <a
                 href={profile.resumeUrl}
+                target="_blank"
+                rel="noreferrer"
                 className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
               >
                 Resume
-              </motion.a>
-            </motion.div>
+              </a>
+            </div>
           </motion.div>
-        )}
+        ) : null}
       </AnimatePresence>
     </header>
   );

@@ -1,97 +1,79 @@
 export const profile = {
   name: "Jaseem Quraishi",
-  role: "Frontend Developer",
-  tagline: "Building performance-critical web applications that scale.",
-  tags: [
-    "Frontend Developer",
-    "React",
-    "TypeScript",
-    "Next.js",
-    "Performance Engineering",
-  ],
+  role: "Full-Stack Engineer",
+  tagline:
+    "I build production-grade web applications with a focus on scalable frontend architecture, backend APIs, performance, and real-time systems.",
+  tags: ["React", "TypeScript", "Python", "FastAPI", "Next.js"],
   location: "Indore, India",
-  relocate: "Open to relocating to Delhi NCR",
   email: "jaseem1quraishi@gmail.com",
   github: "github.com/Zasim1074",
   githubUrl: "https://github.com/Zasim1074",
-  linkedin: "linkedin.com/in/jaseem-quraishi/",
+  linkedin: "linkedin.com/in/jaseem-quraishi",
   linkedinUrl: "https://www.linkedin.com/in/jaseem-quraishi",
+  portfolioUrl: "https://jaseem-codes.vercel.app/",
   resumeUrl:
-  "https://docs.google.com/document/d/19D_BMhAcrjJqbBVQrMn7y4waBHo2xmsOpoprTVGgMNM/export?format=pdf",
+    "https://docs.google.com/document/d/19D_BMhAcrjJqbBVQrMn7y4waBHo2xmsOpoprTVGgMNM/export?format=pdf",
 };
 
 export const about = {
   paragraphs: [
-    "I'm a Frontend Developer with 1 year of production experience building performance-critical React applications. I specialize in optimizing web performance \u2014 achieving an 81% bundle size reduction and building real-time WebSocket dashboards for high-frequency data.",
-    "Based in Indore, India. Open to relocating to Delhi NCR for the right opportunity.",
-  ],
-  stats: [
-    {
-      value: "81%",
-      label: "Bundle Size Reduction",
-      sub: "70MB \u2192 13MB in production",
-    },
-    {
-      value: "1yr",
-      label: "Production Experience",
-      sub: "React \u00b7 TypeScript \u00b7 Next.js",
-    },
+    "I’m a Full-Stack Engineer working across product interfaces and backend systems, with a strong focus on React, Next.js, TypeScript, Python, and FastAPI. My work is centered on shipping production-grade web applications that are reliable, maintainable, and performance-aware.",
+    "I build interactive frontend experiences, integrate APIs, and support the backend pieces that make those experiences reliable in real business workflows—authentication, RBAC, uploads, reporting, and real-time dashboards. I care about clean architecture, practical engineering decisions, and shipping software that holds up under production use.",
   ],
   highlights: [
     {
-      title: "Real-time Dashboards",
-      desc: "WebSocket-powered high-frequency data streams with minimal re-renders",
+      title: "Frontend engineering",
+      desc: "React, Next.js, TypeScript, UI architecture, and product-focused performance work",
     },
     {
-      title: "Indore, India",
-      desc: "Open to relocating to Delhi NCR",
+      title: "Backend capability",
+      desc: "Python, FastAPI, PostgreSQL, REST APIs, JWT, RBAC, and service integration",
     },
     {
-      title: "5+ Modules",
-      desc: "Reusable component architecture across a real estate CRM platform",
+      title: "Production systems",
+      desc: "Real-time dashboards, charts, uploads, role-driven workflows, and resilient product tooling",
     },
   ],
 };
 
 export const skills = [
   {
-    group: "Core",
+    group: "Frontend",
     color: "blue",
     items: [
-      "React.js",
+      "React",
       "Next.js",
       "TypeScript",
-      "JavaScript (ES6+)",
-      "HTML5",
-      "CSS3",
+      "JavaScript",
+      "React Native",
+      "Redux",
+      "React Query",
       "Tailwind CSS",
+      "Shadcn UI",
+      "HTML",
+      "CSS",
     ],
   },
   {
-    group: "State & Data",
+    group: "Backend",
     color: "cyan",
-    items: ["Redux", "Context API", "React Query", "REST APIs", "WebSockets"],
-  },
-  {
-    group: "Performance",
-    color: "green",
     items: [
-      "Code Splitting",
-      "Lazy Loading",
-      "Tree Shaking",
-      "useMemo / useCallback",
-      "Chrome DevTools Profiling",
+      "Python",
+      "FastAPI",
+      "SQLAlchemy",
+      "PostgreSQL",
+      "Alembic",
+      "REST APIs",
+      "JWT",
+      "Authentication",
+      "Authorization",
+      "RBAC",
     ],
   },
   {
-    group: "Tools",
-    color: "amber",
-    items: ["Git", "GitHub", "Vite", "Postman", "Vercel"],
-  },
-  {
-    group: "Also Familiar With",
-    color: "slate",
-    items: ["React Native", "Flutter", "Python", "SQL", "SQL Alchemy"],
+    group: "Testing & Engineering",
+    color: "green",
+    items: ["Pytest", "React Testing Library", "Git", "GitHub", "Postman", "Docker"],
   },
 ];
 
@@ -99,61 +81,128 @@ export const experience = [
   {
     role: "Frontend Developer",
     company: "FloorWalk Consultants Pvt. Ltd.",
-    period: "01 Aug 2025 \u2013 Present",
+    period: "August 2025 – Present",
     location: "Indore, India",
     points: [
-      "Cut production bundle from 70MB → 13MB (-81%) via dead code elimination, tree shaking, and image compression — load time dropped from ~6s to ~4s.",
-      "Engineered real-time analytics dashboards over WebSockets with high-frequency UI rendering; optimized to eliminate unnecessary re-renders.",
-      "Built a full-featured real estate CRM handling leads, brokers, properties, and follow-up workflows with role-based access (Manager, Broker, Staff).",
-      "Designed a custom API layer with caching and retry logic that eliminated redundant network calls and reduced backend server costs.",
-      "Identified and resolved interaction latency bottlenecks using Chrome DevTools profiling and component restructuring.",
-      "Audited and reduced unnecessary WebSocket calls in coordination with the backend team, directly lowering server load.",
-      "Built reusable component architecture adopted across 5+ product modules, cutting dev time on new features by ~30%.",
+      "Built and optimized production React/Next.js modules across CRM workflows, improving maintainability and performance for manager, broker, and staff role-based access flows.",
+      "Delivered real-time WebSocket dashboards and reporting views for operational data, with API integrations for platforms including Housing.com and 99acres.",
+      "Implemented caching and retry patterns around external API calls to improve reliability, reduce redundant requests, and stabilize integrations.",
+      "Reduced frontend bundle size from approximately 70MB to 13MB and improved page load time from approximately 6 seconds to 4 seconds through code splitting, dependency cleanup, and asset optimization.",
+      "Optimized high-traffic modules for approximately 30% faster performance by refining rendering paths, component structure, and interaction flow across complex dashboards.",
+      "Worked across authentication, uploads, reports, charts, multilingual interfaces, and role-based access to ship production features with a strong focus on usability and reliability.",
     ],
+  },
+];
+
+export const engineeringHighlights = [
+  {
+    value: "81%",
+    label: "Bundle-size reduction",
+    detail: "70MB → 13MB",
+  },
+  {
+    value: "~33%",
+    label: "Initial loading improvement",
+    detail: "~6s → ~4s",
+  },
+  {
+    value: "30%",
+    label: "Faster optimized modules",
+    detail: "Refined render paths and workflows",
+  },
+  {
+    value: "Real-time",
+    label: "WebSocket dashboards",
+    detail: "Operational, data-heavy product views",
   },
 ];
 
 export const projects = [
   {
     title: "TrackHire",
+    type: "Engineering project",
     icon: "briefcase",
-    desc: "A full-featured job application tracking platform. Manage applications, track interview stages, and stay organized throughout your job search.",
-    tags: ["React", "Supabase", "Clerk Auth"],
-    link: "https://track-hire-jq.vercel.app",
-    linkLabel: "track-hire-jq.vercel.app",
+    summary:
+      "An end-to-end hiring platform backend designed around authentication, role-based access control, candidate workflows, and maintainable API architecture.",
+    stack: [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "SQLAlchemy 2.0",
+      "Alembic",
+      "Pydantic",
+      "JWT",
+      "Docker",
+      "Pytest",
+    ],
+    highlights: [
+      "Built JWT-based authentication and RBAC for end-to-end hiring workflows.",
+      "Designed API-first backend patterns around candidate lifecycle and authorization.",
+      "Used SQLAlchemy models, migrations, and Dockerized local development workflows.",
+      "Added test coverage for core API behavior using Pytest.",
+    ],
+    githubUrl: "https://github.com/Zasim1074",
+    demoUrl: null,
   },
   {
     title: "Hotel Sanwariya",
-    icon: "building",
-    desc: "A modern hospitality website featuring room showcases, amenities, gallery, booking inquiries, SEO optimization, & a fully responsive design.",
-    tags: ["Next.js", "Tailwind CSS", "TypeScript"],
-    link: "https://sanwariyahotel.com/",
-    linkLabel: "sanwariyahotel.com",
+    type: "Deployed product",
+    icon: "sparkles",
+    summary:
+      "A real hospitality website focused on room presentation, guest information, responsive browsing, and a polished business-facing experience for a live brand.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Responsive UI", "SEO"],
+    highlights: [
+      "Built a hotel-facing experience centered on room presentation, amenities, and information discovery.",
+      "Designed a mobile-friendly layout that stays clean and readable across devices.",
+      "Focused on SEO-friendly structure and business-ready presentation for a live website.",
+    ],
+    githubUrl: "https://github.com/Zasim1074",
+    demoUrl: "https://sanwariyahotel.com/",
   },
   {
-    title: "Code Book",
+    title: "CodeBook",
+    type: "Developer tool",
     icon: "code",
-    desc: "A browser-based multi-language code editor with execution, AI assistance, and syntax highlighting \u2014 no local setup required.",
-    tags: ["React", "Monaco Editor", "Judge0", "Gemini API"],
-    link: "https://code-book1.vercel.app",
-    linkLabel: "code-book1.vercel.app",
+    summary:
+      "A browser-based coding workspace built with React and Monaco to support execution, code review workflows, and a cleaner developer-focused experience.",
+    stack: ["React", "Next.js", "TypeScript", "Monaco Editor", "AI Integration"],
+    highlights: [
+      "Built a modern editor experience centered on developer workflows and fast iteration.",
+      "Structured the UI around code execution and a lightweight, responsive interaction model.",
+      "Combined React architecture with AI-assisted tooling patterns in a focused product flow.",
+    ],
+    githubUrl: "https://github.com/Zasim1074",
+    demoUrl: null,
+  },
+  {
+    title: "RefundAI",
+    type: "AI support workflow",
+    icon: "sparkles",
+    summary:
+      "An AI-assisted customer support workflow focused on refund conversations and automated support interactions using API-driven logic.",
+    stack: ["Python", "FastAPI", "REST APIs", "AI Integration"],
+    highlights: [
+      "Explored practical support automation patterns around customer refund workflows.",
+      "Built API-driven logic for conversational support and response handling.",
+      "Focused on real-world product constraints rather than generic demo-only functionality.",
+    ],
+    githubUrl: "https://github.com/Zasim1074",
+    demoUrl: null,
   },
 ];
 
-export const education = [
-  {
-    degree: "B.Sc. Information Technology",
-    school: "Guru Nanak Dev University, Amritsar",
-    period: "2022 \u2013 2025",
-    desc: "Focused on software development fundamentals, web technologies, and computer science principles. Built a strong foundation in algorithms, data structures, and modern development practices.",
-  },
-];
+export const education: Array<{
+  degree: string;
+  school: string;
+  period: string;
+  desc: string;
+}> = [];
 
 export const navLinks = [
+  { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
-  { label: "Education", href: "#education" },
+  { label: "Stack", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];

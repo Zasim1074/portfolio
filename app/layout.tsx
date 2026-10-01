@@ -3,23 +3,22 @@ import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { AnimationProvider } from "@/components/AnimationProvider";
-import { CustomCursor } from "@/components/CustomCursor";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const sora = Sora({ subsets: ["latin"], variable: "--font-sora", weight: ["600", "700", "800"] });
 
 export const metadata: Metadata = {
-  title: "Jaseem Quraishi | Frontend Developer (React, Next.js, TypeScript)",
+  title: "Jaseem Quraishi | Full-Stack Engineer | React, TypeScript, Python",
   description:
-    "Frontend Developer specializing in React and Next.js. I build performance-critical, scalable web applications with TypeScript, modern JavaScript, and clean UI — reduced production bundle size by 81%.",
+    "Full-Stack Engineer specializing in React, TypeScript, Python and FastAPI, building production-grade web applications, APIs and real-time systems.",
   keywords: [
     "Jaseem Quraishi",
-    "Frontend Developer",
+    "Full-Stack Engineer",
     "React Developer",
-    "Next.js Developer",
     "TypeScript",
-    "JavaScript",
-    "Web Performance",
+    "Python",
+    "FastAPI",
+    "Next.js",
     "Portfolio",
   ],
   authors: [{ name: "Jaseem Quraishi" }],
@@ -32,19 +31,20 @@ export const metadata: Metadata = {
     canonical: "https://jaseem-codes.vercel.app/",
   },
   openGraph: {
-    title: "Jaseem Quraishi | Frontend Developer",
+    title: "Jaseem Quraishi | Full-Stack Engineer",
     description:
-      "React & Next.js Developer building performance-critical, scalable web applications with TypeScript.",
+      "Full-Stack Engineer building production-grade web applications with React, TypeScript, Python, and FastAPI.",
     url: "https://jaseem-codes.vercel.app/",
-    siteName: "Jaseem Quraishi | Frontend Developer",
+    siteName: "Jaseem Quraishi | Full-Stack Engineer",
     images: ["https://jaseem-codes.vercel.app/jaseem.png"],
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jaseem Quraishi | Frontend Developer",
-    description: "Frontend Developer skilled in React, Next.js, and TypeScript.",
+    title: "Jaseem Quraishi | Full-Stack Engineer",
+    description:
+      "Full-Stack Engineer specializing in React, TypeScript, Python and FastAPI.",
     images: ["https://jaseem-codes.vercel.app/jaseem.png"],
   },
   icons: {
@@ -62,21 +62,27 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Jaseem Quraishi",
-  jobTitle: "Frontend Developer",
+  jobTitle: "Full-Stack Engineer",
   url: "https://jaseem-codes.vercel.app/",
   image: "https://jaseem-codes.vercel.app/jaseem.png",
   sameAs: [
     "https://github.com/Zasim1074",
     "https://www.linkedin.com/in/jaseem-quraishi",
   ],
-  knowsAbout: ["React", "Next.js", "TypeScript", "JavaScript", "Web Performance Optimization"],
+  knowsAbout: [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Python",
+    "FastAPI",
+    "PostgreSQL",
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${sora.variable} font-sans antialiased`}>
-        <CustomCursor />
         <ThemeProvider>
           <AnimationProvider>
             {children}
