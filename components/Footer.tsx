@@ -16,7 +16,7 @@ export function Footer() {
       <div className="section-inner flex flex-col items-center justify-between gap-4 px-4 text-sm text-muted dark:text-muted-dark sm:flex-row sm:px-8">
         <div>
           <p className="font-medium text-ink dark:text-ink-dark">{profile.name}</p>
-          <p className="mt-1 text-xs uppercase tracking-[0.12em] text-muted dark:text-muted-dark">Software Engineer</p>
+          <p className="mt-1 text-xs uppercase tracking-[0.12em] text-muted dark:text-muted-dark">Full-Stack Engineer</p>
           <p className="mt-2 text-xs text-muted dark:text-muted-dark">React · TypeScript · Python · FastAPI</p>
         </div>
 
