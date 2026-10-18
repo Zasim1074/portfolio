@@ -10,7 +10,7 @@ import { Education } from "@/components/Education";
 
 export default function Home() {
   return (
-    <><a href="#home" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-surface focus:p-3">Skip to content</a><main id="main-content">
+    <><a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-surface focus:p-3">Skip to content</a><main id="main-content">
       <Navbar />
       <Hero />
       <About />
