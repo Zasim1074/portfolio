@@ -9,7 +9,7 @@ export const profile = {
   linkedin: "linkedin.com/in/jaseem-quraishi",
   linkedinUrl: "https://www.linkedin.com/in/jaseem-quraishi",
   portfolioUrl: "https://jaseem-codes.vercel.app/",
-  resumeUrl: "https://github.com/Zasim1074/Zasim1074/blob/main/resume/Jaseem_Quraishi_Resume.pdf",
+  resumeUrl: "https://github.com/Zasim1074/Zasim1074/raw/refs/heads/main/Jaseem_Quraishi_Full_Stack_Developer.pdf",
 };
 
 export const about = {
