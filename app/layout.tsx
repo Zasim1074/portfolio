@@ -1,11 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Sora } from "next/font/google";
+import { Inter, Sora, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { LazyMotion, domAnimation, MotionConfig } from "framer-motion";
+import { PointerSpotlight, ScrollProgress } from "@/components/motion";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const sora = Sora({ subsets: ["latin"], variable: "--font-sora", weight: ["600", "700", "800"] });
+const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", weight: ["400", "500", "600"] });
 
 export const metadata: Metadata = {
   title: "Jaseem Quraishi | Full Stack Developer | React, Next.js, Python, FastAPI",
@@ -81,10 +83,10 @@ const personJsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${sora.variable} font-sans antialiased`}>
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <body className={`${inter.variable} ${sora.variable} ${jetBrainsMono.variable} font-sans antialiased`}>
         <ThemeProvider>
-          <MotionConfig reducedMotion="user"><LazyMotion features={domAnimation}>{children}</LazyMotion></MotionConfig>
+          <MotionConfig reducedMotion="user"><LazyMotion features={domAnimation}><ScrollProgress /><PointerSpotlight />{children}</LazyMotion></MotionConfig>
         </ThemeProvider>
         <script
           type="application/ld+json"
