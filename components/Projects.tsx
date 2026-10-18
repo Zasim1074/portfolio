@@ -2,7 +2,7 @@
 
 import { Activity, Briefcase, Code2, ExternalLink, Github, Sparkles } from "lucide-react";
 import { projects } from "@/lib/data";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 
 const icons: Record<string, typeof Briefcase> = {
   briefcase: Briefcase,
@@ -15,12 +15,12 @@ export function Projects() {
   return (
     <section id="projects" className="section relative">
       <div className="section-inner">
-        <p className="eyebrow">Selected Work</p>
+        <h2 id="projects-title" className="eyebrow" aria-labelledby="projects-title">Selected Work</h2>
 
         <div className="mt-8 grid gap-6 lg:grid-cols-2">
           {projects.map((project, idx) => {
             const Icon = icons[project.icon];
-            const isFlagship = project.title === "TrackHire" || project.title === "Hotel Sanwariya";
+            const isFlagship = project.featured;
 
             return (
               <motion.article
@@ -62,7 +62,7 @@ export function Projects() {
 
                 <div className="mt-6 flex flex-wrap gap-3">
                   <a
-                    href={project.githubUrl}
+                    href={project.repoUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-2 text-sm font-medium text-ink transition-colors hover:border-accent/40 hover:text-accent dark:border-border-dark dark:bg-surface-dark dark:text-ink-dark dark:hover:text-accent-dark"
@@ -70,15 +70,15 @@ export function Projects() {
                     <Github size={15} />
                     GitHub
                   </a>
-                  {project.demoUrl ? (
+                  {project.liveUrl ? (
                     <a
-                      href={project.demoUrl}
+                      href={project.liveUrl}
                       target="_blank"
                       rel="noreferrer"
                       className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-2 text-sm font-medium text-ink transition-colors hover:border-accent/40 hover:text-accent dark:border-border-dark dark:bg-surface-dark dark:text-ink-dark dark:hover:text-accent-dark"
                     >
                       <ExternalLink size={15} />
-                      {project.title === "Hotel Sanwariya" ? "Visit Website" : "Live Demo"}
+                      Live Project
                     </a>
                   ) : null}
                 </div>

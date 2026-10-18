@@ -2,7 +2,7 @@
 
 import { ArrowRight, Github, Linkedin, FileText } from "lucide-react";
 import { profile } from "@/lib/data";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 
 const container = {
   hidden: { opacity: 0 },
@@ -40,7 +40,7 @@ export function Hero() {
                 variants={item}
                 className="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-300"
               >
-                Full-Stack Engineer
+                Full Stack Developer
               </motion.span>
 
               <motion.h1
@@ -54,21 +54,21 @@ export function Hero() {
                 variants={item}
                 className="mt-5 text-lg font-medium text-accent dark:text-accent-dark sm:text-2xl"
               >
-                React • TypeScript • Python • FastAPI
+                React | Next.js | TypeScript | Python | FastAPI | PostgreSQL
               </motion.p>
 
               <motion.p
                 variants={item}
                 className="mt-6 max-w-xl text-base leading-relaxed text-muted dark:text-muted-dark sm:text-lg"
               >
-                Building production-grade software.
+                Frontend Developer at FloorWalk Consultants with 1+ year of production experience, building full-stack projects with FastAPI and PostgreSQL.
               </motion.p>
 
               <motion.p
                 variants={item}
                 className="mt-4 text-sm font-medium text-emerald-700 dark:text-emerald-300"
               >
-                Open to new opportunities.
+                Indore, India | Open to Full Stack Developer roles in Delhi NCR
               </motion.p>
 
               <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-3">
@@ -90,7 +90,10 @@ export function Hero() {
                   whileTap={{ scale: 0.98 }}
                 >
                   <FileText size={16} />
-                  View Resume
+                  Download Resume
+                </motion.a>
+                <motion.a href={profile.linkedinUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-5 py-3 text-sm font-semibold text-ink dark:border-border-dark dark:bg-surface-dark dark:text-ink-dark" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                  <Linkedin size={16} /> LinkedIn
                 </motion.a>
                 <motion.a
                   href={profile.githubUrl}
@@ -111,13 +114,13 @@ export function Hero() {
               className="relative"
             >
               <div className="rounded-3xl border border-border bg-surface/80 p-5 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-sm dark:border-border-dark dark:bg-surface-dark/80">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted dark:text-muted-dark">Current focus</p>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted dark:text-muted-dark">At a glance</p>
 
                 <div className="mt-6 space-y-4">
                   {[
-                    { label: "Frontend", value: "React / Next.js / TypeScript" },
-                    { label: "Backend", value: "Python / FastAPI / PostgreSQL" },
-                    { label: "Systems", value: "Authentication / dashboards / APIs" },
+                    { label: "Role", value: "Frontend Developer, FloorWalk, Aug 2025 - present" },
+                    { label: "Stack", value: "React / Next.js / TypeScript / Python / FastAPI / PostgreSQL" },
+                    { label: "Looking for", value: "Full Stack Developer roles, Delhi NCR" },
                   ].map((item) => (
                     <div key={item.label} className="rounded-2xl border border-border bg-surface2/75 p-3 dark:border-border-dark dark:bg-surface2-dark/75">
                       <p className="text-[10px] uppercase tracking-[0.14em] text-muted dark:text-muted-dark">{item.label}</p>
@@ -127,10 +130,7 @@ export function Hero() {
                 </div>
 
                 <div className="mt-6 border-t border-border pt-4 dark:border-border-dark">
-                  <p className="text-xs uppercase tracking-[0.18em] text-accent dark:text-accent-dark">Product mindset</p>
-                  <p className="mt-2 text-sm leading-relaxed text-muted dark:text-muted-dark">
-                    Performance, reliability, and maintainability across the full stack.
-                  </p>
+                  <p className="text-sm text-muted dark:text-muted-dark">1+ year of production experience</p>
                 </div>
               </div>
             </motion.div>

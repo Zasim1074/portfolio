@@ -2,18 +2,18 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Sora } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { AnimationProvider } from "@/components/AnimationProvider";
+import { LazyMotion, domAnimation, MotionConfig } from "framer-motion";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const sora = Sora({ subsets: ["latin"], variable: "--font-sora", weight: ["600", "700", "800"] });
 
 export const metadata: Metadata = {
-  title: "Jaseem Quraishi | Full-Stack Engineer | React, TypeScript, Python",
+  title: "Jaseem Quraishi | Full Stack Developer | React, Next.js, Python, FastAPI",
   description:
-    "Full-Stack Engineer specializing in React, TypeScript, Python and FastAPI, building production-grade web applications, APIs and real-time systems.",
+    "Full Stack Developer in Indore (open to Delhi NCR) building React, Next.js, TypeScript and FastAPI applications. 1+ year of production experience.",
   keywords: [
     "Jaseem Quraishi",
-    "Full-Stack Engineer",
+    "Full Stack Developer",
     "React Developer",
     "TypeScript",
     "Python",
@@ -31,20 +31,18 @@ export const metadata: Metadata = {
     canonical: "https://jaseem-codes.vercel.app/",
   },
   openGraph: {
-    title: "Jaseem Quraishi | Full-Stack Engineer",
-    description:
-      "Full-Stack Engineer building production-grade web applications with React, TypeScript, Python, and FastAPI.",
+    title: "Jaseem Quraishi | Full Stack Developer",
+    description: "Full Stack Developer in Indore, open to Delhi NCR, with 1+ year of production experience.",
     url: "https://jaseem-codes.vercel.app/",
-    siteName: "Jaseem Quraishi | Full-Stack Engineer",
+    siteName: "Jaseem Quraishi | Full Stack Developer",
     images: ["https://jaseem-codes.vercel.app/jaseem.png"],
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jaseem Quraishi | Full-Stack Engineer",
-    description:
-      "Full-Stack Engineer specializing in React, TypeScript, Python and FastAPI.",
+    title: "Jaseem Quraishi | Full Stack Developer",
+    description: "Full Stack Developer in Indore, open to Delhi NCR, with 1+ year of production experience.",
     images: ["https://jaseem-codes.vercel.app/jaseem.png"],
   },
   icons: {
@@ -62,7 +60,9 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Jaseem Quraishi",
-  jobTitle: "Full-Stack Engineer",
+  jobTitle: "Full Stack Developer",
+  address: { "@type": "PostalAddress", addressLocality: "Indore", addressCountry: "IN" },
+  worksFor: { "@type": "Organization", name: "FloorWalk Consultants Pvt. Ltd." },
   url: "https://jaseem-codes.vercel.app/",
   image: "https://jaseem-codes.vercel.app/jaseem.png",
   sameAs: [
@@ -84,9 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${sora.variable} font-sans antialiased`}>
         <ThemeProvider>
-          <AnimationProvider>
-            {children}
-          </AnimationProvider>
+          <MotionConfig reducedMotion="user"><LazyMotion features={domAnimation}>{children}</LazyMotion></MotionConfig>
         </ThemeProvider>
         <script
           type="application/ld+json"

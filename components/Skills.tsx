@@ -1,7 +1,7 @@
 "use client";
 
 import { skills } from "@/lib/data";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 
 const colorMap: Record<string, string> = {
   blue: "border-blue-500/25 bg-blue-500/5 text-blue-700 dark:border-blue-400/30 dark:bg-blue-500/10 dark:text-blue-300",
@@ -14,7 +14,7 @@ export function Skills() {
   return (
     <section id="skills" className="section relative">
       <div className="section-inner">
-        <p className="eyebrow">Technical Stack</p>
+        <h2 id="skills-title" className="eyebrow" aria-labelledby="skills-title">Technical Skills</h2>
 
         <motion.div
           className="mt-8 space-y-6"

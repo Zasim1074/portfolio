@@ -1,21 +1,13 @@
 "use client";
 
 import { education } from "@/lib/data";
-import { ScrollReveal } from "./ScrollReveal";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 
 export function Education() {
   return (
     <section id="education" className="section bg-surface2/50 dark:bg-surface2-dark/50 relative">
       <div className="section-inner">
-        <ScrollReveal>
-          <p className="eyebrow">Education</p>
-        </ScrollReveal>
-        <ScrollReveal delay={1}>
-          <h2 className="mt-2 font-display text-3xl font-bold tracking-tight sm:text-4xl">
-            Academic Background
-          </h2>
-        </ScrollReveal>
+        <h2 id="education-title" className="eyebrow" aria-labelledby="education-title">Education</h2>
 
         <motion.div
           className="mt-8 space-y-6"
@@ -52,7 +44,7 @@ export function Education() {
                   {edu.period}
                 </motion.span>
               </div>
-              <motion.p
+              {edu.desc ? <motion.p
                 className="mt-3 max-w-2xl text-sm leading-relaxed text-muted dark:text-muted-dark"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -60,7 +52,7 @@ export function Education() {
                 viewport={{ once: true }}
               >
                 {edu.desc}
-              </motion.p>
+              </motion.p> : null}
             </motion.div>
           ))}
         </motion.div>

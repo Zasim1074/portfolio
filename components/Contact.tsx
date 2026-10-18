@@ -1,8 +1,8 @@
 "use client";
 
-import { Mail, Github, Linkedin, MapPin } from "lucide-react";
+import { Mail, Github, Linkedin, MapPin, FileText } from "lucide-react";
 import { profile } from "@/lib/data";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 
 const cards = [
   {
@@ -26,19 +26,20 @@ const cards = [
   {
     icon: MapPin,
     label: "Location",
-    value: profile.location,
+    value: "Indore, India (open to relocate to Delhi NCR)",
     href: undefined,
   },
+  { icon: FileText, label: "Resume", value: "Download resume", href: profile.resumeUrl },
 ];
 
 export function Contact() {
   return (
     <section id="contact" className="section relative">
       <div className="section-inner">
-        <p className="eyebrow">Contact</p>
-        <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink dark:text-ink-dark sm:text-4xl">
+        <h2 id="contact-title" className="eyebrow" aria-labelledby="contact-title">Contact</h2>
+        <p className="mt-3 font-display text-3xl font-bold tracking-tight text-ink dark:text-ink-dark sm:text-4xl">
           Let&apos;s build something.
-        </h2>
+        </p>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted dark:text-muted-dark sm:text-lg">
           I work across frontend and backend product engineering, from interface architecture and performance to API design and real-time systems.
         </p>
@@ -75,8 +76,7 @@ export function Contact() {
               <motion.a
                 key={card.label}
                 href={card.href}
-                target="_blank"
-                rel="noreferrer"
+                {...(!card.href.startsWith("mailto:") ? { target: "_blank", rel: "noreferrer" } : {})}
                 className="block"
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.99 }}

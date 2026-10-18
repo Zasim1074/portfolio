@@ -1,13 +1,17 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 import { engineeringHighlights } from "@/lib/data";
+import { about } from "@/lib/data";
 
 export function About() {
   return (
     <section id="about" className="section relative">
       <div className="section-inner">
-        <p className="eyebrow">Engineering Impact</p>
+        <h2 id="about-title" className="eyebrow" aria-labelledby="about-title">About</h2>
+        <div className="mt-5 max-w-4xl space-y-4 text-base leading-relaxed text-muted dark:text-muted-dark">
+          {about.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+        </div>
 
         <motion.div
           className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4"

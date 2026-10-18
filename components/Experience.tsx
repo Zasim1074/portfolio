@@ -2,16 +2,16 @@
 
 import { MapPin } from "lucide-react";
 import { experience } from "@/lib/data";
-import { motion } from "framer-motion";
+import { m as motion } from "framer-motion";
 
 export function Experience() {
   return (
     <section id="experience" className="section relative bg-surface2/40 dark:bg-surface2-dark/40">
       <div className="section-inner">
-        <p className="eyebrow">Experience</p>
-        <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink dark:text-ink-dark sm:text-4xl">
+        <h2 id="experience-title" className="eyebrow" aria-labelledby="experience-title">Experience</h2>
+        <p className="mt-3 font-display text-3xl font-bold tracking-tight text-ink dark:text-ink-dark sm:text-4xl">
           Product engineering work with real business context.
-        </h2>
+        </p>
 
         <motion.div
           className="mt-8 space-y-6"

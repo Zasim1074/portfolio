@@ -30,11 +30,11 @@ const config: Config = {
           dark: "#f1f5f9",
         },
         muted: {
-          DEFAULT: "#64748b",
-          dark: "#94a3b8",
+          DEFAULT: "#526174",
+          dark: "#aebbd0",
         },
         accent: {
-          DEFAULT: "#3b82f6",
+          DEFAULT: "#1d4ed8",
           dark: "#60a5fa",
         },
       },

@@ -6,18 +6,20 @@ import { Projects } from "@/components/Projects";
 import { Skills } from "@/components/Skills";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { Education } from "@/components/Education";
 
 export default function Home() {
   return (
-    <main>
+    <><a href="#home" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-surface focus:p-3">Skip to content</a><main id="main-content">
       <Navbar />
       <Hero />
       <About />
       <Experience />
       <Projects />
       <Skills />
+      <Education />
       <Contact />
       <Footer />
-    </main>
+    </main></>
   );
 }
