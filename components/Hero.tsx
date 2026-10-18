@@ -1,142 +1,48 @@
-"use client";
-
 import { ArrowRight, Github, Linkedin, FileText } from "lucide-react";
 import { profile } from "@/lib/data";
-import { m as motion } from "framer-motion";
+import { Reveal, SpotlightCard } from "@/components/motion";
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.15,
-    },
-  },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7 },
-  },
-};
+const glance = [
+  { label: "Role", value: "Frontend Developer, FloorWalk, Aug 2025 - present" },
+  { label: "Stack", value: "React / Next.js / TypeScript / Python / FastAPI / PostgreSQL" },
+  { label: "Looking for", value: "Full Stack Developer roles, Delhi NCR" },
+];
 
 export function Hero() {
-  return (
-    <section id="home" className="section relative flex min-h-[calc(100vh-5rem)] items-center py-14 sm:py-16 lg:py-18">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-[-10%] top-[-8%] h-72 w-72 rounded-full bg-accent/8 blur-3xl dark:bg-accent-dark/8" />
-        <div className="absolute bottom-[-10%] right-[-8%] h-80 w-80 rounded-full bg-sky-500/8 blur-3xl dark:bg-sky-400/8" />
+  return <section id="home" className="section relative flex min-h-[calc(100svh-4rem)] items-center py-14 sm:py-16 lg:py-20">
+    <div aria-hidden="true" className="ambient-glow pointer-events-none absolute -right-32 -top-20 h-[34rem] w-[34rem] rounded-full" />
+    <div className="section-inner w-full">
+      <div className="mx-auto grid w-full min-w-0 grid-cols-[minmax(0,1fr)] items-center gap-12 lg:max-w-6xl lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16">
+        <div className="min-w-0 text-left">
+          <p className="mono-label inline-flex items-center gap-2 rounded-full border border-cyan/25 bg-cyan/5 px-3 py-2 text-cyan">Full Stack Developer</p>
+          <h1 className="display-title mt-6 max-w-4xl break-words font-display font-bold text-ink-dark">{profile.name}</h1>
+          <Reveal delay={0.06} className="mt-5 min-w-0">
+            <p className="break-words font-mono text-sm leading-relaxed text-cyan sm:text-base">React | Next.js | TypeScript | Python | FastAPI | PostgreSQL</p>
+          </Reveal>
+          <Reveal delay={0.12} className="mt-5 min-w-0">
+            <p className="max-w-2xl break-words text-base leading-relaxed text-muted-dark sm:text-lg">Frontend Developer at FloorWalk Consultants with 1+ year of production experience, building full-stack projects with FastAPI and PostgreSQL.</p>
+          </Reveal>
+          <Reveal delay={0.18} className="mt-4">
+          <p className="flex flex-wrap items-center gap-2 text-sm font-medium text-emerald-300"><span className="status-pulse h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-400" /><span>Indore, India | Open to Full Stack Developer roles in Delhi NCR</span></p>
+          </Reveal>
+          <Reveal delay={0.24} className="mt-8 flex flex-wrap items-center gap-3">
+            <a href="#projects" className="inline-flex min-h-11 items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-cyan-700 px-5 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5">View Work <ArrowRight size={16} /></a>
+            <a href={profile.resumeUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-ink-dark transition-colors hover:border-cyan/50 hover:text-cyan"><FileText size={16} />Download Resume</a>
+            <a href={profile.githubUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-ink-dark transition-colors hover:border-cyan/50 hover:text-cyan"><Github size={16} />GitHub</a>
+            <a href={profile.linkedinUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-ink-dark transition-colors hover:border-cyan/50 hover:text-cyan"><Linkedin size={16} />LinkedIn</a>
+          </Reveal>
+        </div>
+        <Reveal delay={0.15} className="relative min-w-0">
+          <div aria-hidden="true" className="ambient-glow absolute -inset-10 -z-10 rounded-full" />
+          <SpotlightCard className="card min-w-0 rounded-3xl border-white/10 bg-surface-dark/80 p-6 shadow-none backdrop-blur-xl sm:p-8">
+            <p className="mono-label text-cyan">At a glance</p>
+            <dl className="mt-6 min-w-0 space-y-3">
+              {glance.map((item) => <div key={item.label} className="min-w-0 rounded-2xl border border-white/10 bg-white/[0.025] p-4"><dt className="mono-label text-muted-dark">{item.label}</dt><dd className="mt-2 break-words text-sm font-semibold leading-relaxed text-ink-dark">{item.value}</dd></div>)}
+            </dl>
+            <p className="mt-5 border-t border-white/10 pt-4 text-sm text-muted-dark">1+ year of production experience</p>
+          </SpotlightCard>
+        </Reveal>
       </div>
-
-      <div className="section-inner w-full">
-        <motion.div variants={container} initial="hidden" animate="show" className="mx-auto max-w-6xl">
-          <div className="grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
-            <div className="text-left">
-              <motion.span
-                variants={item}
-                className="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-300"
-              >
-                Full Stack Developer
-              </motion.span>
-
-              <motion.h1
-                variants={item}
-                className="mt-6 font-display text-4xl font-bold tracking-tight text-ink dark:text-ink-dark sm:text-5xl lg:text-7xl"
-              >
-                {profile.name}
-              </motion.h1>
-
-              <motion.p
-                variants={item}
-                className="mt-5 text-lg font-medium text-accent dark:text-accent-dark sm:text-2xl"
-              >
-                React | Next.js | TypeScript | Python | FastAPI | PostgreSQL
-              </motion.p>
-
-              <motion.p
-                variants={item}
-                className="mt-6 max-w-xl text-base leading-relaxed text-muted dark:text-muted-dark sm:text-lg"
-              >
-                Frontend Developer at FloorWalk Consultants with 1+ year of production experience, building full-stack projects with FastAPI and PostgreSQL.
-              </motion.p>
-
-              <motion.p
-                variants={item}
-                className="mt-4 text-sm font-medium text-emerald-700 dark:text-emerald-300"
-              >
-                Indore, India | Open to Full Stack Developer roles in Delhi NCR
-              </motion.p>
-
-              <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-3">
-                <motion.a
-                  href="#projects"
-                  className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/20 transition-transform hover:-translate-y-0.5"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  View Work
-                  <ArrowRight size={16} />
-                </motion.a>
-                <motion.a
-                  href={profile.resumeUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-5 py-3 text-sm font-semibold text-ink transition-colors hover:border-accent/40 hover:text-accent dark:border-border-dark dark:bg-surface-dark dark:text-ink-dark dark:hover:text-accent-dark"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <FileText size={16} />
-                  Download Resume
-                </motion.a>
-                <motion.a href={profile.linkedinUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-5 py-3 text-sm font-semibold text-ink dark:border-border-dark dark:bg-surface-dark dark:text-ink-dark" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                  <Linkedin size={16} /> LinkedIn
-                </motion.a>
-                <motion.a
-                  href={profile.githubUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-5 py-3 text-sm font-semibold text-ink transition-colors hover:border-accent/40 hover:text-accent dark:border-border-dark dark:bg-surface-dark dark:text-ink-dark dark:hover:text-accent-dark"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Github size={16} />
-                  GitHub
-                </motion.a>
-              </motion.div>
-            </div>
-
-            <motion.div
-              variants={item}
-              className="relative"
-            >
-              <div className="rounded-3xl border border-border bg-surface/80 p-5 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur-sm dark:border-border-dark dark:bg-surface-dark/80">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted dark:text-muted-dark">At a glance</p>
-
-                <div className="mt-6 space-y-4">
-                  {[
-                    { label: "Role", value: "Frontend Developer, FloorWalk, Aug 2025 - present" },
-                    { label: "Stack", value: "React / Next.js / TypeScript / Python / FastAPI / PostgreSQL" },
-                    { label: "Looking for", value: "Full Stack Developer roles, Delhi NCR" },
-                  ].map((item) => (
-                    <div key={item.label} className="rounded-2xl border border-border bg-surface2/75 p-3 dark:border-border-dark dark:bg-surface2-dark/75">
-                      <p className="text-[10px] uppercase tracking-[0.14em] text-muted dark:text-muted-dark">{item.label}</p>
-                      <p className="mt-2 text-sm font-semibold text-ink dark:text-ink-dark">{item.value}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-6 border-t border-border pt-4 dark:border-border-dark">
-                  <p className="text-sm text-muted dark:text-muted-dark">1+ year of production experience</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  );
+    </div>
+  </section>;
 }
