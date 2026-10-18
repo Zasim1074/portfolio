@@ -12,7 +12,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
     <ul className="mt-5 space-y-2 text-sm leading-relaxed text-muted-dark">{project.highlights.map((item) => <li key={item} className="flex gap-2"><span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" /><span>{item}</span></li>)}</ul>
     <div className="mt-auto flex flex-wrap gap-3 pt-7"><a href={project.repoUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-ink-dark transition-colors hover:border-cyan/50 hover:text-cyan"><Github size={15} />GitHub</a>{project.liveUrl ? <a href={project.liveUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-ink-dark transition-colors hover:border-cyan/50 hover:text-cyan"><ExternalLink size={15} />Live Project</a> : null}</div>
   </div>;
-  return project.featured ? <TiltCard className="h-full lg:col-span-2">{body}</TiltCard> : <Reveal as="article" className="h-full">{body}</Reveal>;
+  return project.featured ? <TiltCard className="h-full">{body}</TiltCard> : <Reveal as="article" className="h-full">{body}</Reveal>;
 }
 
 export function Projects() {

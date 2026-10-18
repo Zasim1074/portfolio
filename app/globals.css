@@ -35,43 +35,40 @@ html:not(.dark) body {
     linear-gradient(rgb(15 23 42 / 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgb(15 23 42 / 0.03) 1px, transparent 1px);
 }
-html.light .text-ink-dark {
-  color: #0f172a;
+html.light {
+  color-scheme: light;
 }
-html.light .text-muted-dark {
-  color: #475569;
+html.light body {
+  background-color: #f8fafc;
+  background-image:
+    radial-gradient(ellipse at 75% 0%, rgb(37 99 235 / 0.07), transparent 34rem),
+    linear-gradient(rgb(15 23 42 / 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(15 23 42 / 0.025) 1px, transparent 1px);
 }
-html.light .text-cyan {
-  color: #0e7490;
-}
-html.light [class~="bg-surface-dark"] {
-  background-color: rgb(255 255 255 / 0.88);
-}
-html.light [class~="bg-surface-dark/80"] {
-  background-color: rgb(255 255 255 / 0.82);
-}
-html.light [class~="bg-surface-dark/95"] {
-  background-color: rgb(255 255 255 / 0.95);
-}
-html.light [class~="bg-surface2-dark"] {
-  background-color: #f1f5f9;
-}
-html.light [class~="border-white/10"] {
-  border-color: rgb(15 23 42 / 0.12);
-}
-html.light [class~="border-white/15"] {
-  border-color: rgb(15 23 42 / 0.18);
-}
-html.light [class~="bg-white/[0.025]"] {
-  background-color: rgb(15 23 42 / 0.025);
-}
-html.light .accent-text {
-  background-image: linear-gradient(to right, #1d4ed8, #0e7490);
-}
+html.light .text-ink-dark { color: #0f172a; }
+html.light .text-muted-dark { color: #475569; }
+html.light .text-cyan { color: #0e7490; }
+html.light [class~="bg-bg-dark"] { background-color: #f8fafc; }
+html.light [class~="bg-bg-dark/70"] { background-color: rgb(248 250 252 / 0.88); }
+html.light [class~="bg-surface-dark"] { background-color: #fff; }
+html.light [class~="bg-surface-dark/80"] { background-color: rgb(255 255 255 / 0.94); }
+html.light [class~="bg-surface-dark/95"] { background-color: rgb(255 255 255 / 0.98); }
+html.light [class~="bg-surface2-dark"] { background-color: #f1f5f9; }
+html.light [class~="border-white/10"] { border-color: rgb(15 23 42 / 0.11); }
+html.light [class~="border-white/15"] { border-color: rgb(15 23 42 / 0.17); }
+html.light [class~="bg-white/5"] { background-color: rgb(15 23 42 / 0.035); }
+html.light [class~="bg-white/[0.025]"],
+html.light [class~="bg-white/[0.03]"] { background-color: rgb(15 23 42 / 0.035); }
+html.light [class~="bg-cyan/10"] { background-color: rgb(8 145 178 / 0.1); }
+html.light [class~="border-cyan/20"] { border-color: rgb(8 145 178 / 0.2); }
+html.light [class~="border-cyan/30"] { border-color: rgb(8 145 178 / 0.32); }
+html.light .accent-text { background-image: linear-gradient(to right, #1d4ed8, #0e7490); }
 html.light .glass-header::before {
-  background: rgb(248 250 252 / 0.8);
-  border-color: rgb(15 23 42 / 0.12);
+  background: rgb(248 250 252 / 0.88);
+  border-color: rgb(15 23 42 / 0.1);
+  box-shadow: 0 8px 24px rgb(15 23 42 / 0.04);
 }
+html.light .light-theme-toggle-active { background-color: #0f172a; color: #fff; }
 
 * {
   @apply box-border;
@@ -101,13 +98,13 @@ html.light .glass-header::before {
 }
 
 .section {
-  @apply px-4 py-16 sm:px-8 lg:px-10;
+  @apply px-4 py-16 sm:px-8 lg:px-10 xl:py-14;
   position: relative;
   overflow: clip;
 }
 
 .section-inner {
-  @apply mx-auto min-w-0 max-w-[1100px];
+  @apply mx-auto min-w-0 max-w-[1200px];
   width: min(100%, calc(100vw - 2rem));
   position: relative;
   z-index: 1;
@@ -119,7 +116,12 @@ html.light .glass-header::before {
 
 .light .card,
 html:not(.dark) .card {
-  @apply border-slate-900/10 bg-white/80;
+  @apply border-slate-900/10 bg-white/90;
+}
+
+@media (min-width: 1280px) {
+  .section { @apply px-6; }
+  .section-inner { width: min(100%, calc(100vw - 3rem)); }
 }
 
 .badge {
@@ -165,6 +167,9 @@ html:not(.dark) .card {
 .glass-header::before {
   content: "";
   @apply absolute inset-0 -z-10 border-b border-white/10 bg-bg-dark/75 backdrop-blur-xl;
+}
+@media (min-width: 1280px) {
+  .glass-header > .section-inner { @apply px-6; }
 }
 .glass-header {
   position: sticky;

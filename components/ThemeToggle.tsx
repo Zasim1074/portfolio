@@ -21,7 +21,7 @@ export function ThemeToggle() {
         onClick={() => setTheme("light")}
         className={`flex min-h-11 items-center gap-1.5 rounded-full px-3 py-1.5 transition-colors ${
           theme === "light"
-            ? "bg-slate-700 text-white"
+            ? "light-theme-toggle-active bg-slate-700 text-white"
             : "text-muted-dark"
         }`}
         aria-label="Switch to light mode"
@@ -33,7 +33,7 @@ export function ThemeToggle() {
         onClick={() => setTheme("dark")}
         className={`flex min-h-11 items-center gap-1.5 rounded-full px-3 py-1.5 transition-colors ${
           theme === "dark"
-            ? "bg-slate-700 text-white"
+            ? "light-theme-toggle-active bg-slate-700 text-white"
             : "text-muted-dark"
         }`}
         aria-label="Switch to dark mode"
