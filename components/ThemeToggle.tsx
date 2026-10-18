@@ -12,7 +12,12 @@ export function ThemeToggle() {
   useEffect(() => setMounted(true), []);
 
   if (!mounted) {
-    return <div className="h-11 w-[110px] rounded-full border border-white/10" aria-hidden="true" />;
+    return (
+      <div
+        className="h-11 w-[110px] rounded-full border border-white/10"
+        aria-hidden="true"
+      />
+    );
   }
 
   return (
@@ -26,7 +31,12 @@ export function ThemeToggle() {
         }`}
         aria-label="Switch to light mode"
       >
-        <motion.span animate={{ rotate: theme === "light" ? 0 : -35 }} transition={{ duration: 0.25 }}><Sun size={14} /></motion.span>
+        <motion.span
+          animate={{ rotate: theme === "light" ? 0 : -35 }}
+          transition={{ duration: 0.25 }}
+        >
+          <Sun size={14} />
+        </motion.span>
         Light
       </button>
       <button
@@ -38,7 +48,12 @@ export function ThemeToggle() {
         }`}
         aria-label="Switch to dark mode"
       >
-        <motion.span animate={{ rotate: theme === "dark" ? 0 : 35 }} transition={{ duration: 0.25 }}><Moon size={14} /></motion.span>
+        <motion.span
+          animate={{ rotate: theme === "dark" ? 0 : 35 }}
+          transition={{ duration: 0.25 }}
+        >
+          <Moon size={14} />
+        </motion.span>
         Dark
       </button>
     </div>
