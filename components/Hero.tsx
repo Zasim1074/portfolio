@@ -1,14 +1,20 @@
 import { ArrowRight, Github, Linkedin, FileText } from "lucide-react";
-import { profile } from "@/lib/data";
+import { featuredStack, profile } from "@/lib/data";
 import { Reveal, SpotlightCard } from "@/components/motion";
 
 const glance = [
-  { label: "Role", value: "Frontend Developer, FloorWalk, Aug 2025 - present" },
+  {
+    label: "Current role",
+    value: `${profile.currentRole}, ${profile.currentCompany}`,
+  },
   {
     label: "Stack",
-    value: "React / Next.js / TypeScript / Python / FastAPI / PostgreSQL",
+    value: featuredStack.join(" / "),
   },
-  { label: "Looking for", value: "Full Stack Developer roles, Delhi NCR" },
+  {
+    label: "Looking for",
+    value: `${profile.preferredRoles[0]} roles in ${profile.preferredLocations.join(" or ")}`,
+  },
 ];
 
 export function Hero() {
@@ -25,7 +31,7 @@ export function Hero() {
         <div className="mx-auto grid w-full min-w-0 grid-cols-[minmax(0,1fr)] items-center gap-12 lg:max-w-6xl lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16">
           <div className="min-w-0 text-left">
             <p className="mono-label inline-flex items-center gap-2 rounded-full border border-cyan/25 bg-cyan/5 px-3 py-2 text-cyan">
-              Full Stack Developer
+              {profile.role}
             </p>
             <h1 className="display-title mt-6 max-w-4xl break-words font-display font-bold text-ink-dark">
               {profile.name}
@@ -37,17 +43,17 @@ export function Hero() {
             </Reveal>
             <Reveal delay={0.12} className="mt-5 min-w-0">
               <p className="max-w-2xl break-words text-base leading-relaxed text-muted-dark sm:text-lg">
-                Frontend Developer at FloorWalk Consultants with 1+ year of
-                production experience, building full-stack projects with FastAPI
-                and PostgreSQL.
+                {profile.currentRole} at {profile.currentCompany} with{" "}
+                {profile.experience.toLowerCase()}, building full-stack projects
+                with FastAPI and PostgreSQL.
               </p>
             </Reveal>
             <Reveal delay={0.18} className="mt-4">
               <p className="flex flex-wrap items-center gap-2 text-sm font-medium text-emerald-300">
                 <span className="status-pulse h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-400" />
                 <span>
-                  Indore, India | Open to Full Stack Developer roles in Delhi
-                  NCR
+                  {profile.location} | {profile.availability} in{" "}
+                  {profile.preferredLocations.join(" or ")}
                 </span>
               </p>
             </Reveal>
@@ -64,7 +70,7 @@ export function Hero() {
               <a
                 href={profile.resumeUrl}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-ink-dark transition-colors hover:border-cyan/50 hover:text-cyan"
               >
                 <FileText size={16} />
@@ -73,7 +79,7 @@ export function Hero() {
               <a
                 href={profile.githubUrl}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-ink-dark transition-colors hover:border-cyan/50 hover:text-cyan"
               >
                 <Github size={16} />
@@ -82,7 +88,7 @@ export function Hero() {
               <a
                 href={profile.linkedinUrl}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-ink-dark transition-colors hover:border-cyan/50 hover:text-cyan"
               >
                 <Linkedin size={16} />
@@ -111,7 +117,7 @@ export function Hero() {
                 ))}
               </dl>
               <p className="mt-5 border-t border-white/10 pt-4 text-sm text-muted-dark">
-                1+ year of production experience
+                {profile.experience}
               </p>
             </SpotlightCard>
           </Reveal>

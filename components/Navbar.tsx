@@ -4,17 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
-import { profile } from "@/lib/data";
-
-const sectionLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "Education", href: "#education" },
-  { label: "Contact", href: "#contact" },
-];
+import { navLinks, profile } from "@/lib/data";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -22,7 +12,7 @@ export function Navbar() {
   const [activeLink, setActiveLink] = useState("home");
 
   useEffect(() => {
-    const sections = sectionLinks
+    const sections = navLinks
       .map((link) => document.getElementById(link.href.slice(1)))
       .filter((element): element is HTMLElement => Boolean(element));
     const observer = new IntersectionObserver(
@@ -71,7 +61,7 @@ export function Navbar() {
         </div>
 
         <nav className="hidden items-center gap-4 text-sm font-medium lg:flex xl:gap-6">
-          {sectionLinks.map((link) => {
+          {navLinks.map((link) => {
             const isActive = activeLink === link.href.replace("#", "");
             return (
               <a
@@ -99,10 +89,10 @@ export function Navbar() {
           <a
             href={profile.resumeUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="inline-flex min-h-11 items-center rounded-full bg-gradient-to-r from-blue-600 to-cyan-700 px-4 py-2 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
           >
-            Download Resume
+           Resume
           </a>
         </div>
 
@@ -119,7 +109,7 @@ export function Navbar() {
       {open ? (
         <div className="border-t border-white/10 bg-surface-dark/95 px-4 py-4 lg:hidden">
           <nav className="flex flex-col gap-1">
-            {sectionLinks.map((link) => (
+            {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -139,10 +129,10 @@ export function Navbar() {
             <a
               href={profile.resumeUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="inline-flex min-h-11 items-center rounded-full bg-gradient-to-r from-blue-600 to-cyan-700 px-4 py-2 text-sm font-semibold text-white"
             >
-              Download Resume
+             Resume
             </a>
           </div>
         </div>

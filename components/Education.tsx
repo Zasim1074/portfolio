@@ -26,16 +26,11 @@ export function Education() {
                     {edu.degree}
                   </h3>
                   <p className="mt-1 text-sm font-medium text-cyan">
-                    {edu.school}
+                    {edu.school} · {edu.location}
                   </p>
                 </div>
                 <span className="mono-label text-muted-dark">{edu.period}</span>
               </div>
-              {edu.desc ? (
-                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-dark">
-                  {edu.desc}
-                </p>
-              ) : null}
             </Reveal>
           ))}
         </div>

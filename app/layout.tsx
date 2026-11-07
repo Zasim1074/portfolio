@@ -4,18 +4,24 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { LazyMotion, domAnimation, MotionConfig } from "framer-motion";
 import { PointerSpotlight, ScrollProgress } from "@/components/motion";
+import { profile } from "@/lib/data";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const sora = Sora({ subsets: ["latin"], variable: "--font-sora", weight: ["600", "700", "800"] });
 const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", weight: ["400", "500", "600"] });
+const profileImageUrl = new URL(profile.profileImageUrl, profile.portfolioUrl).toString();
+const socialImageUrl = `${profileImageUrl}?v=2`;
 
 export const metadata: Metadata = {
-  title: "Jaseem Quraishi | Full Stack Developer | React, Next.js, Python, FastAPI",
+  title: "Jaseem Quraishi | Full Stack Developer | React, Next.js, Python",
   description:
-    "Full Stack Developer in Indore (open to Delhi NCR) building React, Next.js, TypeScript and FastAPI applications. 1+ year of production experience.",
+    "Jaseem Quraishi is a Full Stack Developer with professional experience building React and Next.js applications, Python FastAPI APIs, and production AI integrations. Based in Indore, open to Delhi NCR and remote India.",
   keywords: [
     "Jaseem Quraishi",
     "Full Stack Developer",
+    "Software Developer",
+    "Full Stack Engineer",
+    "Web Developer",
     "React Developer",
     "TypeScript",
     "Python",
@@ -28,24 +34,38 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  metadataBase: new URL("https://jaseem-codes.vercel.app"),
+  metadataBase: new URL(profile.portfolioUrl),
   alternates: {
-    canonical: "https://jaseem-codes.vercel.app/",
+    canonical: profile.portfolioUrl,
   },
   openGraph: {
-    title: "Jaseem Quraishi | Full Stack Developer",
-    description: "Full Stack Developer in Indore, open to Delhi NCR, with 1+ year of production experience.",
-    url: "https://jaseem-codes.vercel.app/",
+    title: `${profile.name} | ${profile.role}`,
+    description:
+      "Full Stack Developer with professional experience in React, Next.js, Python FastAPI, and production AI integrations. Open to Delhi NCR and remote roles in India.",
+    url: profile.portfolioUrl,
     siteName: "Jaseem Quraishi | Full Stack Developer",
-    images: ["https://jaseem-codes.vercel.app/jaseem.png"],
+    images: [
+      {
+        url: socialImageUrl,
+        width: 250,
+        height: 251,
+        alt: `${profile.name} profile photo`,
+      },
+    ],
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jaseem Quraishi | Full Stack Developer",
-    description: "Full Stack Developer in Indore, open to Delhi NCR, with 1+ year of production experience.",
-    images: ["https://jaseem-codes.vercel.app/jaseem.png"],
+    title: `${profile.name} | ${profile.role}`,
+    description:
+      "Full Stack Developer with professional experience in React, Next.js, Python FastAPI, and production AI integrations.",
+    images: [
+      {
+        url: socialImageUrl,
+        alt: `${profile.name} profile photo`,
+      },
+    ],
   },
   icons: {
     icon: "/favicon.ico",
@@ -62,11 +82,11 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Jaseem Quraishi",
-  jobTitle: "Full Stack Developer",
+  jobTitle: profile.currentRole,
   address: { "@type": "PostalAddress", addressLocality: "Indore", addressCountry: "IN" },
-  worksFor: { "@type": "Organization", name: "FloorWalk Consultants Pvt. Ltd." },
-  url: "https://jaseem-codes.vercel.app/",
-  image: "https://jaseem-codes.vercel.app/jaseem.png",
+  worksFor: { "@type": "Organization", name: profile.currentCompany },
+  url: profile.portfolioUrl,
+  image: profileImageUrl,
   sameAs: [
     "https://github.com/Zasim1074",
     "https://www.linkedin.com/in/jaseem-quraishi",
@@ -78,6 +98,8 @@ const personJsonLd = {
     "Python",
     "FastAPI",
     "PostgreSQL",
+    "SQL",
+    "AI Integration"
   ],
 };
 

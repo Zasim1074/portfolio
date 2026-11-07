@@ -16,9 +16,16 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
         <span className="grid h-11 w-11 place-items-center rounded-xl border border-cyan/20 bg-cyan/10 text-cyan">
           <Icon size={18} />
         </span>
-        <span className="mono-label rounded-full border border-white/10 px-3 py-2 text-muted-dark">
-          {project.type}
-        </span>
+        <div className="flex flex-wrap justify-end gap-2">
+          {project.featured ? (
+            <span className="mono-label rounded-full border border-cyan/30 bg-cyan/10 px-3 py-2 text-cyan">
+              Featured
+            </span>
+          ) : null}
+          <span className="mono-label rounded-full border border-white/10 px-3 py-2 text-muted-dark">
+            {project.type}
+          </span>
+        </div>
       </div>
       <h3 className="mt-5 font-display text-2xl font-semibold text-ink-dark">
         {project.title}
@@ -50,7 +57,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
         <a
           href={project.repoUrl}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-ink-dark transition-colors hover:border-cyan/50 hover:text-cyan"
         >
           <Github size={15} />
@@ -60,7 +67,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
           <a
             href={project.liveUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-ink-dark transition-colors hover:border-cyan/50 hover:text-cyan"
           >
             <ExternalLink size={15} />
