@@ -36,15 +36,6 @@ export function Contact() {
             <Mail size={16} aria-hidden="true" />
             Email me
           </a>
-          {/* <a
-            href={profile.resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-ink-dark transition-colors hover:border-cyan/50 hover:text-cyan"
-          >
-            <FileText size={16} />
-            Download Resume
-          </a> */}
           <a
             href={profile.githubUrl}
             target="_blank"
@@ -64,9 +55,6 @@ export function Contact() {
             LinkedIn
           </a>
         </div>
-        {/* <Reveal delay={0.14} className="mt-5 text-sm text-muted-dark">
-          {profile.location} · {profile.relocation} · Remote within India
-        </Reveal> */}
       </div>
     </section>
   );
