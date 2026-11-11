@@ -1,6 +1,6 @@
 export const profile = {
   name: "Jaseem Quraishi",
-  role: "Full Stack Developer",
+  role: "Full Stack Software Engineer",
   location: "Indore, India",
   relocation: "Open to relocate to Delhi NCR",
   email: "jaseem1quraishi@gmail.com",
@@ -8,10 +8,10 @@ export const profile = {
   currentCompany: "FloorWalk Consultants Pvt. Ltd.",
   experience: "1+ year of professional experience",
   preferredRoles: [
+    "Full Stack Software Engineer",
     "Full Stack Developer",
-    "Frontend Developer",
-    "React / Next.js Developer",
-    "Python / FastAPI Developer",
+    "Product Engineer",
+    "Software Engineer (React / Next.js / Python)",
   ],
   preferredLocations: ["Delhi NCR", "Remote India"],
   availability: "Open to opportunities",
@@ -26,9 +26,9 @@ export const profile = {
 
 export const about = {
   paragraphs: [
-    "I'm a Full Stack Developer with 1+ year of professional experience at FloorWalk Consultants in Indore. I build React and Next.js applications, including a real-estate CRM and client portals, and implemented backend APIs for a production AI report-analysis feature.",
-    "Outside work, I build full-stack applications with FastAPI, PostgreSQL, and React. My projects include TrackHire, a job application tracker with JWT authentication, database migrations, and automated tests.",
-    "I enjoy solving practical engineering problems, improving performance, and building reliable APIs. I'm looking for Full Stack Developer opportunities at product-focused companies in Delhi NCR or remote within India.",
+    "I'm a Full Stack Software Engineer with 1+ year of professional experience as a Frontend Developer at FloorWalk Consultants Pvt. Ltd. I develop production React, Next.js, and TypeScript applications and contribute practical backend work with Python and FastAPI.",
+    "My work includes an internal real-estate CRM, operational portals, reusable API handling, real-time dashboard updates, and backend APIs for scheduled AI-powered audit report analysis.",
+    "I also build full-stack projects with React, FastAPI, and PostgreSQL, including TrackHire, a job application platform with JWT authentication, database migrations, and automated tests. I'm interested in Full Stack Software Engineer and Product Engineer roles.",
   ],
 };
 
@@ -36,78 +36,74 @@ export const skills = [
   {
     group: "Frontend",
     color: "blue",
-    items: [ "React", "Next.js", "TypeScript", "JavaScript", "Redux", "TanStack Query", "Tailwind CSS", "shadcn/ui", "WebSockets", "HTML", "CSS"]
+    items: [ "React.js", "Next.js", "TypeScript", "JavaScript", "Redux", "TanStack Query", "Tailwind CSS", "shadcn/ui", "HTML", "CSS"]
   },
   {
     group: "Backend",
     color: "cyan",
-    items: [ "Python", "FastAPI", "SQLAlchemy 2.0", "Pydantic v2", "PostgreSQL", "Alembic", "REST APIs", "JWT Authentication", "Role-Based Access Control (RBAC)"]
+    items: [ "Python", "FastAPI", "SQLAlchemy", "Pydantic", "REST APIs", "JWT Authentication", "WebSockets"]
   },
   {
-    group: "Databases",
+    group: "Database",
     color: "purple",
-    items: [ "PostgreSQL", "SQLite", "Relational Database Design", "Database Migrations"]
+    items: [ "PostgreSQL", "SQLite", "Relational Database Design", "Alembic", "Database Migrations"]
   },
   {
-    group: "Testing & Quality",
+    group: "Testing",
     color: "green",
     items: [ "Pytest", "React Testing Library", "API Testing", "Postman" ]
   },
   {
-    group: "Deployment & Infrastructure",
+    group: "Tools & Deployment",
     color: "orange",
-    items: [ "Vercel", "Railway", "cPanel", "WHM", "Production Deployment", "Environment Configuration", "Domain & Hosting Management" ]
-  },
-  {
-    group: "Development Tools",
-    color: "gray",
-    items: [ "Git", "GitHub", "VS Code", "Chrome DevTools" ]
+    items: [ "Git", "GitHub", "Docker", "Vercel", "Railway", "cPanel", "WHM" ]
   }
 ];
 
 export const featuredStack = [ "React", "Next.js", "TypeScript", "Python", "FastAPI", "PostgreSQL"];
 
 export const experience = [{
-  role: "Frontend Developer", company: "FloorWalk Consultants Pvt. Ltd.", period: "Aug 2025 - Present", location: "Indore, India",
+  role: "Frontend Developer", company: "FloorWalk Consultants Pvt. Ltd.", period: "August 2025 – Present", location: "Indore, India",
   points: [
-    'Implemented backend APIs for a production AI report-analysis feature. A scheduled weekly job batches approved audit reports for the Claude API, stores its "what went well / what didn\'t / what to improve" output, and serves it in the client portal.',
-    "Contributed to an approximately 25% reduction in server costs by batching LLM requests instead of sending individual calls per submission.",
-    "Reduced production build size from 70 MB to 13 MB (about 81%) by removing unused libraries and dead code, compressing images, and adding lazy loading. Page load time improved from about 6-8 seconds to 3-4 seconds in manual testing.",
-    "Built the frontend of a real-estate CRM using Next.js, React, and TypeScript; it is used daily by about 10-15 internal users and provides role-based interfaces for managers, brokers, staff, and sales teams.",
-    "Built a reusable API layer with caching, retries, centralized error handling, and custom hooks, replacing per-component fetch logic across modules.",
-    "Implemented WebSocket-driven dashboards for report updates, analytics, and notification counts without page refresh.",
-    "Contributed features to client, auditor, and manager portals, the Shopper app, and company websites; implemented multilingual interfaces supporting 8+ languages.",
+    "Developed and maintained production React, Next.js, and TypeScript applications, contributing to a real-estate CRM used daily by approximately 10–15 internal users across manager, broker, staff, and sales workflows.",
+    "Contributed to client, auditor, manager, and other operational portals, including multilingual interfaces supporting 8+ languages.",
+    "Implemented backend APIs for a production AI-powered audit report analysis feature using the Claude API. A scheduled weekly batch workflow processes approved reports, stores structured insights, and makes them available in the client portal.",
+    "Contributed to approximately 25% lower server costs by batching LLM requests rather than sending individual calls per submission.",
+    "Reduced production build size by approximately 81% (70 MB to 13 MB) through dependency cleanup, asset optimization, and lazy loading. Manually observed page-load times improved from approximately 6–8 seconds to 3–4 seconds.",
+    "Implemented WebSocket-driven updates for dashboards, analytics, report updates, and notification counts.",
+    "Developed reusable API handling with caching, retries, centralized error handling, and custom hooks.",
   ],
 }];
 
 export const engineeringHighlights = [
-  { value: "81%", label: "Build size reduction", detail: "70 MB to 13 MB" },
-  { value: "6-8s to 3-4s", label: "Page load improvement", detail: "Manual testing" },
-  { value: "10-15", label: "Daily CRM users", detail: "Internal users" },
-  { value: "~25%", label: "Server-cost reduction", detail: "Batch LLM processing" },
+  { value: "~81%", label: "Build size reduction", detail: "Approx. 70 MB → 13 MB" },
+  { value: "~6–8s → 3–4s", label: "Page-load time", detail: "Manual testing; approximate" },
+  { value: "~10–15", label: "Daily CRM users", detail: "Internal users; approximate" },
+  { value: "~25%", label: "Server-cost reduction", detail: "Contribution from LLM batching" },
   { value: "8+", label: "Supported languages", detail: "Multilingual interfaces" },
 ];
 
 export const projects = [
   { title: "TrackHire", type: "Full stack project", icon: "briefcase", featured: true,
-    summary: "Job application tracker covering applications, companies, interviews, resumes, and activity tracking.",
-    stack: ["React", "TanStack Query", "shadcn/ui", "FastAPI", "PostgreSQL", "SQLAlchemy 2.0", "Alembic", "Pydantic v2", "JWT", "Pytest", "React Testing Library"],
-    highlights: ["REST API with FastAPI and Pydantic v2 over a normalized PostgreSQL schema with Alembic migrations.", "JWT authentication with protected routes via FastAPI dependency injection.", "Frontend with search, filtering, pagination, and role-based UI.", "Tests with Pytest and React Testing Library."],
-    liveUrl: "https://track-hire-jq.vercel.app", repoUrl: "https://github.com/Zasim1074/track-hire" },
-  { title: "Hotel Sanwariya", type: "Freelance client project", icon: "sparkles", featured: false,
-    summary: "Responsive hotel website.", stack: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui"],
-    highlights: ["Room information with mobile-friendly layouts.", "Inquiry/booking forms that route guest details to WhatsApp.", "Deployed on Vercel with a custom domain."],
-    liveUrl: "https://sanwariyahotel.com/", repoUrl: "https://github.com/Zasim1074/hotel_sanwariya" },
-  { title: "LLM Reliability Lab", type: "AI engineering MVP", icon: "sparkles", featured: true,
-    summary: "A local-first workspace for evaluating semantic-cache behavior, model responses, bias signals, and pattern-based RAG prompt-injection tests. Demo scoring and security checks are explicitly limited and are not guarantees.",
+    summary: "A full-stack job application tracking platform for managing applications, companies, interviews, resumes, and activity.",
+    stack: ["React", "FastAPI", "Python", "PostgreSQL", "SQLAlchemy", "Alembic", "Pydantic", "JWT", "Pytest", "React Testing Library"],
+    highlights: ["REST API architecture built with FastAPI and Pydantic.", "PostgreSQL persistence with SQLAlchemy and Alembic migrations.", "JWT authentication, plus search, filtering, and pagination.", "Automated backend and frontend tests with Pytest and React Testing Library."],
+    liveUrl: "https://track-hire-jq.vercel.app/", repoUrl: "https://github.com/Zasim1074/track-hire" },
+  { title: "LLM Reliability Lab", type: "Engineering evaluation MVP", icon: "sparkles", featured: true,
+    summary: "A local-first engineering workspace for experimenting with semantic caching, LLM evaluation, bias signals, and RAG prompt-injection testing.",
     stack: ["Python", "FastAPI", "Next.js", "TypeScript", "SQLite", "PostgreSQL", "SQLAlchemy", "Alembic", "Pytest", "Vitest"],
     highlights: [
-      "Benchmarks exact-match demo caching and configured semantic matching, with TTL and invalidation controls.",
-      "Compares schema-validated provider judge results with clearly labeled deterministic demo scores and bias checks.",
-      "Runs a pattern-based RAG prompt-injection harness, reports false positives and negatives, and documents its coverage limits.",
-      "Persists benchmark, evaluation, bias, and security runs in experiment history.",
+      "Benchmarks cache behavior with TTL and invalidation controls.",
+      "Compares provider-based evaluation with clearly labeled demo scoring; demo scores are not production evaluations.",
+      "Tests RAG prompt-injection patterns and reports false positives/negatives; pattern-based checks are not security guarantees.",
+      "Stores experiment history and reports for benchmark, evaluation, bias, and security runs.",
     ],
     liveUrl: "", repoUrl: "https://github.com/Zasim1074/llm-reliability-lab" },
+  { title: "Hotel Sanwariya", type: "Freelance client project", icon: "sparkles", featured: false,
+    summary: "A freelance hotel website featuring responsive room information and WhatsApp-based booking inquiries.",
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    highlights: ["Responsive Next.js interface with mobile-friendly layouts.", "Room information and booking inquiries through WhatsApp.", "Production deployment at sanwariyahotel.com."],
+    liveUrl: "https://sanwariyahotel.com/", repoUrl: "https://github.com/Zasim1074/hotel_sanwariya" },
 ];
 
 export const capabilities = [
@@ -138,8 +134,7 @@ export const education = [
     degree: "B.Sc. Information Technology",
     school: "Guru Nanak Dev University",
     location: "Amritsar, India",
-    period: "Aug 2022 - Jul 2025",
-    cgpa: "6.4/10",
+    period: "2022–2025",
   },
 ];
 

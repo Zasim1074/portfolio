@@ -10,14 +10,14 @@ import {
 
 export function Experience() {
   return (
-    <section id="experience" className="section relative">
+    <section
+      id="experience"
+      aria-labelledby="experience-title"
+      className="section relative"
+    >
       <div className="section-inner">
         <Reveal>
-          <h2
-            id="experience-title"
-            className="mono-label text-cyan"
-            aria-labelledby="experience-title"
-          >
+          <h2 id="experience-title" className="mono-label text-cyan">
             Experience
           </h2>
         </Reveal>

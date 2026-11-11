@@ -3,14 +3,14 @@ import { Reveal } from "@/components/motion";
 
 export function Education() {
   return (
-    <section id="education" className="section relative">
+    <section
+      id="education"
+      aria-labelledby="education-title"
+      className="section relative"
+    >
       <div className="section-inner">
         <Reveal>
-          <h2
-            id="education-title"
-            className="mono-label text-cyan"
-            aria-labelledby="education-title"
-          >
+          <h2 id="education-title" className="mono-label text-cyan">
             Education
           </h2>
         </Reveal>

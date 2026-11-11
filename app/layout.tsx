@@ -10,12 +10,11 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const sora = Sora({ subsets: ["latin"], variable: "--font-sora", weight: ["600", "700", "800"] });
 const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", weight: ["400", "500", "600"] });
 const profileImageUrl = new URL(profile.profileImageUrl, profile.portfolioUrl).toString();
-const socialImageUrl = `${profileImageUrl}?v=2`;
 
 export const metadata: Metadata = {
-  title: "Jaseem Quraishi | Full Stack Developer | React, Next.js, Python",
+  title: "Jaseem Quraishi | Full Stack Software Engineer | React, Next.js, Python",
   description:
-    "Jaseem Quraishi is a Full Stack Developer with professional experience building React and Next.js applications, Python FastAPI APIs, and production AI integrations. Based in Indore, open to Delhi NCR and remote India.",
+    "Jaseem Quraishi is a Full Stack Software Engineer experienced in React, Next.js, TypeScript, Python, FastAPI and PostgreSQL, building production web applications and AI-powered product features.",
   keywords: [
     "Jaseem Quraishi",
     "Full Stack Developer",
@@ -39,33 +38,19 @@ export const metadata: Metadata = {
     canonical: profile.portfolioUrl,
   },
   openGraph: {
-    title: `${profile.name} | ${profile.role}`,
+    title: "Jaseem Quraishi | Full Stack Software Engineer | React, Next.js, Python",
     description:
-      "Full Stack Developer with professional experience in React, Next.js, Python FastAPI, and production AI integrations. Open to Delhi NCR and remote roles in India.",
+      "Jaseem Quraishi is a Full Stack Software Engineer experienced in React, Next.js, TypeScript, Python, FastAPI and PostgreSQL, building production web applications and AI-powered product features.",
     url: profile.portfolioUrl,
-    siteName: "Jaseem Quraishi | Full Stack Developer",
-    images: [
-      {
-        url: socialImageUrl,
-        width: 250,
-        height: 251,
-        alt: `${profile.name} profile photo`,
-      },
-    ],
+    siteName: "Jaseem Quraishi",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${profile.name} | ${profile.role}`,
+    title: "Jaseem Quraishi | Full Stack Software Engineer | React, Next.js, Python",
     description:
-      "Full Stack Developer with professional experience in React, Next.js, Python FastAPI, and production AI integrations.",
-    images: [
-      {
-        url: socialImageUrl,
-        alt: `${profile.name} profile photo`,
-      },
-    ],
+      "Jaseem Quraishi is a Full Stack Software Engineer experienced in React, Next.js, TypeScript, Python, FastAPI and PostgreSQL, building production web applications and AI-powered product features.",
   },
   icons: {
     icon: "/favicon.ico",

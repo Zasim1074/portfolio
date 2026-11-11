@@ -1,19 +1,25 @@
-import { ArrowRight, Github, Linkedin, FileText } from "lucide-react";
+import {
+  ArrowRight,
+  Github,
+  Linkedin,
+  FileText,
+  MessageCircle,
+} from "lucide-react";
 import { featuredStack, profile } from "@/lib/data";
 import { Reveal, SpotlightCard } from "@/components/motion";
 
 const glance = [
   {
     label: "Current role",
-    value: `${profile.currentRole}, ${profile.currentCompany}`,
+    value: `${profile.currentRole} at ${profile.currentCompany}`,
   },
   {
-    label: "Stack",
+    label: "Experience",
+    value: profile.experience,
+  },
+  {
+    label: "Core stack",
     value: featuredStack.join(" / "),
-  },
-  {
-    label: "Looking for",
-    value: `${profile.preferredRoles[0]} roles in ${profile.preferredLocations.join(" or ")}`,
   },
 ];
 
@@ -21,6 +27,7 @@ export function Hero() {
   return (
     <section
       id="home"
+      aria-labelledby="hero-title"
       className="section relative flex min-h-[calc(100svh-4rem)] items-center py-14 sm:py-16 lg:py-20"
     >
       <div
@@ -31,10 +38,16 @@ export function Hero() {
         <div className="mx-auto grid w-full min-w-0 grid-cols-[minmax(0,1fr)] items-center gap-12 lg:max-w-6xl lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16">
           <div className="min-w-0 text-left">
             <p className="mono-label inline-flex items-center gap-2 rounded-full border border-cyan/25 bg-cyan/5 px-3 py-2 text-cyan">
-              {profile.role}
+              {profile.currentRole} · {profile.currentCompany}
             </p>
-            <h1 className="display-title mt-6 max-w-4xl break-words font-display font-bold text-ink-dark">
+            <p className="mt-6 font-display text-lg font-semibold text-ink-dark sm:text-xl">
               {profile.name}
+            </p>
+            <h1
+              id="hero-title"
+              className="display-title mt-2 max-w-4xl break-words font-display font-bold text-ink-dark"
+            >
+              {profile.role}
             </h1>
             <Reveal delay={0.06} className="mt-5 min-w-0">
               <p className="break-words font-mono text-sm leading-relaxed text-cyan sm:text-base">
@@ -43,9 +56,10 @@ export function Hero() {
             </Reveal>
             <Reveal delay={0.12} className="mt-5 min-w-0">
               <p className="max-w-2xl break-words text-base leading-relaxed text-muted-dark sm:text-lg">
-                {profile.currentRole} at {profile.currentCompany} with{" "}
-                {profile.experience.toLowerCase()}, building full-stack projects
-                with FastAPI and PostgreSQL.
+                Building production web applications with React, Next.js,
+                TypeScript and Python. Experienced in developing business
+                applications, REST APIs, PostgreSQL-backed systems and
+                AI-powered product features.
               </p>
             </Reveal>
             <Reveal delay={0.18} className="mt-4">
@@ -65,7 +79,7 @@ export function Hero() {
                 href="#projects"
                 className="inline-flex min-h-11 items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-cyan-700 px-5 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
               >
-                View Work <ArrowRight size={16} />
+                View Projects <ArrowRight size={16} aria-hidden="true" />
               </a>
               <a
                 href={profile.resumeUrl}
@@ -73,7 +87,7 @@ export function Hero() {
                 rel="noopener noreferrer"
                 className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-ink-dark transition-colors hover:border-cyan/50 hover:text-cyan"
               >
-                <FileText size={16} />
+                <FileText size={16} aria-hidden="true" />
                 Download Resume
               </a>
               <a
@@ -82,7 +96,7 @@ export function Hero() {
                 rel="noopener noreferrer"
                 className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-ink-dark transition-colors hover:border-cyan/50 hover:text-cyan"
               >
-                <Github size={16} />
+                <Github size={16} aria-hidden="true" />
                 GitHub
               </a>
               <a
@@ -91,8 +105,15 @@ export function Hero() {
                 rel="noopener noreferrer"
                 className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-ink-dark transition-colors hover:border-cyan/50 hover:text-cyan"
               >
-                <Linkedin size={16} />
+                <Linkedin size={16} aria-hidden="true" />
                 LinkedIn
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-ink-dark transition-colors hover:border-cyan/50 hover:text-cyan"
+              >
+                <MessageCircle size={16} aria-hidden="true" />
+                Contact Me
               </a>
             </Reveal>
           </div>

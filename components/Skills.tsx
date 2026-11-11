@@ -3,14 +3,10 @@ import { Reveal, Stagger, StaggerItem } from "@/components/motion";
 
 export function Skills() {
   return (
-    <section id="skills" className="section relative">
+    <section id="skills" aria-labelledby="skills-title" className="section relative">
       <div className="section-inner">
         <Reveal>
-          <h2
-            id="skills-title"
-            className="mono-label text-cyan"
-            aria-labelledby="skills-title"
-          >
+          <h2 id="skills-title" className="mono-label text-cyan">
             Technical Skills
           </h2>
         </Reveal>

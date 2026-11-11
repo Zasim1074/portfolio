@@ -1,17 +1,17 @@
-import { Github, Linkedin,  Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { profile } from "@/lib/data";
 import { Reveal } from "@/components/motion";
 
 export function Contact() {
   return (
-    <section id="contact" className="section relative">
+    <section
+      id="contact"
+      aria-labelledby="contact-title"
+      className="section relative"
+    >
       <div className="section-inner">
         <Reveal>
-          <h2
-            id="contact-title"
-            className="mono-label text-cyan"
-            aria-labelledby="contact-title"
-          >
+          <h2 id="contact-title" className="mono-label text-cyan">
             Contact
           </h2>
         </Reveal>
@@ -22,10 +22,10 @@ export function Contact() {
         </Reveal>
         <Reveal delay={0.1} className="mt-4">
           <p className="max-w-2xl text-base leading-relaxed text-muted-dark sm:text-lg">
-            I&apos;m open to Full Stack Developer, React/Next.js, and Python
-            backend opportunities in Delhi NCR and remote India. If you&apos;re
-            building a product and need someone who can contribute across
-            frontend and backend, let&apos;s connect.
+            I&apos;m open to Full Stack Software Engineer, Full Stack Developer,
+            Product Engineer, and React/Next.js/Python roles in Delhi NCR or
+            remote India. If you&apos;re building a product and need someone
+            who can contribute across frontend and backend, let&apos;s connect.
           </p>
         </Reveal>
         <div className="mt-8 flex flex-wrap gap-3">
@@ -42,7 +42,7 @@ export function Contact() {
             rel="noopener noreferrer"
             className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-ink-dark transition-colors hover:border-cyan/50 hover:text-cyan"
           >
-            <Github size={16} />
+            <Github size={16} aria-hidden="true" />
             GitHub
           </a>
           <a
@@ -51,7 +51,7 @@ export function Contact() {
             rel="noopener noreferrer"
             className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/15 px-5 py-3 text-sm font-semibold text-ink-dark transition-colors hover:border-cyan/50 hover:text-cyan"
           >
-            <Linkedin size={16} />
+            <Linkedin size={16} aria-hidden="true" />
             LinkedIn
           </a>
         </div>

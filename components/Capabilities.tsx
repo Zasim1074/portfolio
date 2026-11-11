@@ -3,10 +3,16 @@ import { Reveal, Stagger, StaggerItem } from "@/components/motion";
 
 export function Capabilities() {
   return (
-    <section id="capabilities" className="section relative">
+    <section
+      id="capabilities"
+      aria-labelledby="capabilities-title"
+      className="section relative"
+    >
       <div className="section-inner">
         <Reveal>
-          <h2 className="mono-label text-cyan">What I Build</h2>
+          <h2 id="capabilities-title" className="mono-label text-cyan">
+            What I Build
+          </h2>
         </Reveal>
         <Stagger className="mt-8 grid gap-4 sm:grid-cols-2" delay={0.06}>
           {capabilities.map((capability) => (

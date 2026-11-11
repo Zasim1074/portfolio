@@ -26,6 +26,6 @@ npm run typecheck
 
 ## Screenshots
 
-Dark theme: ![Portfolio light theme](./docs/preview1.png)
+Dark theme: ![Portfolio dark theme](./docs/preview1.png)
 
-Light theme: ![Portfolio dark theme](./docs/preview2.png)
+Light theme: ![Portfolio light theme](./docs/preview2.png)

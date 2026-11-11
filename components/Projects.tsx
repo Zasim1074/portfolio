@@ -88,14 +88,14 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
 
 export function Projects() {
   return (
-    <section id="projects" className="section relative">
+    <section
+      id="projects"
+      aria-labelledby="projects-title"
+      className="section relative"
+    >
       <div className="section-inner">
         <Reveal>
-          <h2
-            id="projects-title"
-            className="mono-label text-cyan"
-            aria-labelledby="projects-title"
-          >
+          <h2 id="projects-title" className="mono-label text-cyan">
             Selected Work
           </h2>
         </Reveal>

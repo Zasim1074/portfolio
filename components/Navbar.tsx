@@ -100,14 +100,19 @@ export function Navbar() {
           type="button"
           className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-ink-dark lg:hidden"
           aria-label="Toggle navigation menu"
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
           onClick={() => setOpen((current) => !current)}
         >
-          {open ? <X size={18} /> : <Menu size={18} />}
+          {open ? <X size={18} aria-hidden="true" /> : <Menu size={18} aria-hidden="true" />}
         </button>
       </div>
 
       {open ? (
-        <div className="border-t border-white/10 bg-surface-dark/95 px-4 py-4 lg:hidden">
+        <div
+          id="mobile-navigation"
+          className="border-t border-white/10 bg-surface-dark/95 px-4 py-4 lg:hidden"
+        >
           <nav className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <a

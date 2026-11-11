@@ -1,4 +1,4 @@
-import { featuredStack, profile } from "@/lib/data";
+import { profile } from "@/lib/data";
 
 export function Footer() {
   return (

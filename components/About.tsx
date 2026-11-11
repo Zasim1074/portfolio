@@ -1,6 +1,5 @@
 import { engineeringHighlights, about } from "@/lib/data";
 import {
-  CountUp,
   Reveal,
   SpotlightCard,
   Stagger,
@@ -8,14 +7,6 @@ import {
 } from "@/components/motion";
 
 function ImpactValue({ value }: { value: string }) {
-  if (value === "81%")
-    return (
-      <CountUp
-        value={81}
-        suffix="%"
-        className="font-display text-4xl font-bold tracking-tight accent-text"
-      />
-    );
   return (
     <span className="font-display text-4xl font-bold tracking-tight accent-text">
       {value}
@@ -25,14 +16,10 @@ function ImpactValue({ value }: { value: string }) {
 
 export function About() {
   return (
-    <section id="about" className="section relative">
+    <section id="about" aria-labelledby="about-title" className="section relative">
       <div className="section-inner">
         <Reveal>
-          <h2
-            id="about-title"
-            className="mono-label text-cyan"
-            aria-labelledby="about-title"
-          >
+          <h2 id="about-title" className="mono-label text-cyan">
             About
           </h2>
         </Reveal>
