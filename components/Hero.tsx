@@ -37,12 +37,12 @@ export function Hero() {
       <div className="section-inner w-full">
         <div className="mx-auto grid w-full min-w-0 grid-cols-[minmax(0,1fr)] items-center gap-12 lg:max-w-6xl lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16">
           <div className="min-w-0 text-left">
-            <p className="mono-label inline-flex items-center gap-2 rounded-full border border-cyan/25 bg-cyan/5 px-3 py-2 text-cyan">
+            {/* <p className="mono-label inline-flex items-center gap-2 rounded-full border border-cyan/25 bg-cyan/5 px-3 py-2 text-cyan">
               {profile.currentRole} · {profile.currentCompany}
-            </p>
-            <p className="mt-6 font-display text-lg font-semibold text-ink-dark sm:text-xl">
+            </p> */}
+            {/* <p className="mt-6 font-display text-lg font-semibold text-ink-dark sm:text-xl">
               {profile.name}
-            </p>
+            </p> */}
             <h1
               id="hero-title"
               className="display-title mt-2 max-w-4xl break-words font-display font-bold text-ink-dark"
