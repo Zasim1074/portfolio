@@ -68,7 +68,7 @@ const personJsonLd = {
   "@type": "Person",
   name: "Jaseem Quraishi",
   jobTitle: profile.currentRole,
-  address: { "@type": "PostalAddress", addressLocality: "Indore", addressCountry: "IN" },
+  address: { "@type": "PostalAddress", addressLocality: "Delhi", addressCountry: "IN" },
   worksFor: { "@type": "Organization", name: profile.currentCompany },
   url: profile.portfolioUrl,
   image: profileImageUrl,

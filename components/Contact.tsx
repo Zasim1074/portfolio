@@ -23,8 +23,7 @@ export function Contact() {
         <Reveal delay={0.1} className="mt-4">
           <p className="max-w-2xl text-base leading-relaxed text-muted-dark sm:text-lg">
             I&apos;m open to Full Stack Software Engineer, Full Stack Developer,
-            Product Engineer, and React/Next.js/Python roles in Delhi NCR or
-            remote India. If you&apos;re building a product and need someone
+            Product Engineer, and React/Next.js/Python roles in India or Remote. If you&apos;re building a product and need someone
             who can contribute across frontend and backend, let&apos;s connect.
           </p>
         </Reveal>
